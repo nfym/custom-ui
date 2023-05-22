@@ -1,0 +1,6 @@
+{
+  "name": "@custom-ui/demo",
+  "scripts": {
+    "dev": "vite"
+  }
+}

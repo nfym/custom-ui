@@ -1,0 +1,6 @@
+{
+  "name": "@custom-ui/constants",
+  "private": true,
+  "main": "index.ts",
+  "license": "ISC"
+}

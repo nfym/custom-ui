@@ -1,0 +1,5 @@
+{
+  "name": "@custom-ui/utils",
+  "main": "index.ts",
+  "license": "ISC"
+}
