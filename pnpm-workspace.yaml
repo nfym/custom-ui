@@ -1,4 +1,4 @@
 packages:
-  - "demos/*"
-  - "packages/*"
+  - 'demos/*'
+  - 'packages/*'
   - example

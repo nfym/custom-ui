@@ -2,6 +2,6 @@
  * 计算数组平均值
  * @returns
  */
-const average = (arr: number[]) => arr.reduce((a, b) => a + b) / arr.length;
+const average = (arr: number[]) => arr.reduce((a, b) => a + b) / arr.length
 
-export default average;
+export default average

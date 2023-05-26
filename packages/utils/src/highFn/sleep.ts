@@ -5,7 +5,7 @@
  * @returns
  */
 const sleep = async (milliseconds: number) =>
-  new Promise((resolve) => setTimeout(resolve, milliseconds));
+  new Promise((resolve) => setTimeout(resolve, milliseconds))
 
 // const asyncPrintNums = async () => {
 //   console.log(1);
@@ -16,11 +16,11 @@ const sleep = async (milliseconds: number) =>
 
 // 同步版本
 const sleepSync = (ms: number) => {
-  const end = new Date().getTime() + ms;
+  const end = new Date().getTime() + ms
   while (new Date().getTime() < end) {
     /* do nothing */
   }
-};
+}
 
 // const printNums = () => {
 //   console.log(1);
@@ -29,4 +29,4 @@ const sleepSync = (ms: number) => {
 //   console.log(3);
 // };
 
-export default sleep;
+export default sleep

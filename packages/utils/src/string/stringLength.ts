@@ -4,13 +4,13 @@
  * @return {number}
  */
 function charLength(str: string): number {
-  let length = 0;
+  let length = 0
 
-  for (let _char of str) {
-    length += 1;
+  for (const _char of str) {
+    length += 1
   }
 
-  return length;
+  return length
 }
 
-export default charLength;
+export default charLength

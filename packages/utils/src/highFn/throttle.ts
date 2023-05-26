@@ -5,16 +5,16 @@
  * @returns
  */
 function throttle(fn: Function, delay: number) {
-  let flag = true;
+  let flag = true
   return (...args: any) => {
     if (flag) {
-      flag = false;
-      fn(...args);
+      flag = false
+      fn(...args)
       setTimeout(() => {
-        flag = true;
-      }, delay);
+        flag = true
+      }, delay)
     }
-  };
+  }
 }
 
-export default throttle;
+export default throttle

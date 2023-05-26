@@ -11,7 +11,7 @@ function compressImg(
   type: string,
   mx: number,
   mh: number,
-  quality: number = 1
+  quality = 1
 ) {
   /**
    const newImg = compressImg(img, 'image/png', 500, 300, 0.8).then((blob) =>
@@ -20,39 +20,39 @@ function compressImg(
    */
 
   return new Promise((resolve, reject) => {
-    const canvas = document.createElement("canvas");
-    const context = canvas.getContext("2d");
-    const { width: originWidth, height: originHeight } = img;
+    const canvas = document.createElement('canvas')
+    const context = canvas.getContext('2d')
+    const { width: originWidth, height: originHeight } = img
     // 最大尺寸限制
-    const maxWidth = mx;
-    const maxHeight = mh;
+    const maxWidth = mx
+    const maxHeight = mh
     // 目标尺寸
-    let targetWidth = originWidth;
-    let targetHeight = originHeight;
+    let targetWidth = originWidth
+    let targetHeight = originHeight
     if (originWidth > maxWidth || originHeight > maxHeight) {
       if (originWidth / originHeight > 1) {
         // 宽图片
-        targetWidth = maxWidth;
-        targetHeight = Math.round(maxWidth * (originHeight / originWidth));
+        targetWidth = maxWidth
+        targetHeight = Math.round(maxWidth * (originHeight / originWidth))
       } else {
         // 高图片
-        targetHeight = maxHeight;
-        targetWidth = Math.round(maxHeight * (originWidth / originHeight));
+        targetHeight = maxHeight
+        targetWidth = Math.round(maxHeight * (originWidth / originHeight))
       }
     }
-    canvas.width = targetWidth;
-    canvas.height = targetHeight;
-    context?.clearRect(0, 0, targetWidth, targetHeight);
+    canvas.width = targetWidth
+    canvas.height = targetHeight
+    context?.clearRect(0, 0, targetWidth, targetHeight)
     // 图片绘制
-    context?.drawImage(img, 0, 0, targetWidth, targetHeight);
+    context?.drawImage(img, 0, 0, targetWidth, targetHeight)
     canvas.toBlob(
       function (blob) {
-        resolve(blob);
+        resolve(blob)
       },
-      type || "image/png",
+      type || 'image/png',
       quality
-    );
-  });
+    )
+  })
 }
 
-export default compressImg;
+export default compressImg

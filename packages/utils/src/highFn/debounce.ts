@@ -13,17 +13,17 @@ function debounce(fn: Function, wait: number) {
   debounce(sayLove, 200)('xuxiaoxi');
    */
 
-  let timer: any = null;
+  let timer: any = null
   return function () {
-    let context = this;
-    let args = arguments;
+    const context = this
+    const args = arguments
     if (timer !== null) {
-      clearTimeout(timer);
+      clearTimeout(timer)
     }
     timer = setTimeout(() => {
-      fn.apply(context, args);
-    }, wait);
-  };
+      fn.apply(context, args)
+    }, wait)
+  }
 }
 
-export default debounce;
+export default debounce

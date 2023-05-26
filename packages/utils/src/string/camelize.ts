@@ -4,9 +4,9 @@
  * @returns
  */
 function camelize(str: string) {
-  const camelizeRE = /-(\w)/g;
+  const camelizeRE = /-(\w)/g
   return str.replace(camelizeRE, function (_, c) {
-    return c ? c.toUpperCase() : "";
-  });
+    return c ? c.toUpperCase() : ''
+  })
 }
-export default camelize;
+export default camelize
