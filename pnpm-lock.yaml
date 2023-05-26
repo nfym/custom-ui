@@ -17,6 +17,12 @@ importers:
       '@vitejs/plugin-vue':
         specifier: ^4.2.3
         version: 4.2.3(vite@4.3.7)(vue@3.2.36)
+      cz-git:
+        specifier: ^1.6.1
+        version: 1.6.1
+      czg:
+        specifier: ^1.6.1
+        version: 1.6.1
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -26,6 +32,12 @@ importers:
       vue:
         specifier: ^3.2.36
         version: 3.2.36
+
+  demos/demo: {}
+
+  demos/gsap: {}
+
+  demos/vue-track: {}
 
   example: {}
 
@@ -360,6 +372,15 @@ packages:
 
   /csstype@2.6.21:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==}
+    dev: true
+
+  /cz-git@1.6.1:
+    resolution: {integrity: sha512-+ohk/MFETERw4o/WpN3hUk7GM8oAwnaQI/uDuREGm4/B+G3DghGvNZQ/0MbFqZHWgKWvMzNZI6eKmPo0uPCu1A==}
+    dev: true
+
+  /czg@1.6.1:
+    resolution: {integrity: sha512-F6xzZ+ooLqCOLdsT7miEZRInaTjoglY5CjT5Hc4Yg9gxwLS2zjfUUFGvemVgUZI+ggzFAHE6VL0PA+4ukbOWgQ==}
+    hasBin: true
     dev: true
 
   /esbuild@0.17.19:

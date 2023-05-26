@@ -2,10 +2,13 @@
   "name": "custom-ui",
   "private": true,
   "scripts": {
+    "cz": "czg",
     "dev": "vite example"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "cz-git": "^1.6.1",
+    "czg": "^1.6.1",
     "typescript": "^5.0.4",
     "vite": "^4.3.7",
     "vue": "^3.2.36"
@@ -14,5 +17,10 @@
     "@custom-ui/components": "workspace:*",
     "@custom-ui/theme-chalk": "workspace:*",
     "@custom-ui/utils": "workspace:*"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   }
 }
