@@ -1,5 +1,5 @@
 {
-  "name": "@custom-ui/gsap",
+  "name": "@custom-ui/vue-track",
   "scripts": {
     "dev": "vite"
   }
