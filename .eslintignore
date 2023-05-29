@@ -1,6 +1,7 @@
 # eslint 忽略检查 (根据项目需要自行添加)
 *.sh
 node_modules
+pnpm-lock.yaml
 *.md
 *.woff
 *.ttf
