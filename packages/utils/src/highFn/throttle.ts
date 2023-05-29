@@ -4,6 +4,7 @@
  * @param delay
  * @returns
  */
+// eslint-disable-next-line @typescript-eslint/ban-types
 function throttle(fn: Function, delay: number) {
   let flag = true
   return (...args: any) => {

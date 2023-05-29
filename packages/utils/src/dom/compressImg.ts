@@ -19,7 +19,7 @@ function compressImg(
     );
    */
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const canvas = document.createElement('canvas')
     const context = canvas.getContext('2d')
     const { width: originWidth, height: originHeight } = img

@@ -15,7 +15,7 @@ const sleep = async (milliseconds: number) =>
 // };
 
 // 同步版本
-const sleepSync = (ms: number) => {
+export const sleepSync = (ms: number) => {
   const end = new Date().getTime() + ms
   while (new Date().getTime() < end) {
     /* do nothing */

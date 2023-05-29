@@ -1,4 +1,4 @@
-const toString = Object.prototype.toString
+// const toString = Object.prototype.toString
 
 export function isNull(value: unknown): value is null {
   return value === null

@@ -6,6 +6,7 @@
 function charLength(str: string): number {
   let length = 0
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   for (const _char of str) {
     length += 1
   }
