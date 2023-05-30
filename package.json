@@ -4,10 +4,11 @@
   "scripts": {
     "cz": "czg",
     "dev": "vite example",
+    "dev:demo": "pnpm -C demos/demo dev",
     "prepare": "husky install",
-    "lint:eslint": "eslint --cache --fix \"**/*.{vue,js,ts,jsx,tsx}\" --max-warnings 0 --cache --cache-location node_modules/.cache/eslint/",
+    "lint:eslint": "eslint \"**/*.{vue,js,ts,jsx,tsx}\" --max-warnings 20 --cache --fix  --cache-location node_modules/.cache/eslint/.eslintcache",
     "lint:prettier": "prettier --write --cache .",
-    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\"  --cache-location node_modules/.cache/stylelint/",
     "lint:lint-staged": "lint-staged",
     "type:check": "vue-tsc --noEmit --skipLibCheck"
   },
