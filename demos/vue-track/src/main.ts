@@ -1,4 +1,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import setupGlobDirectives from '@/directives'
 
-createApp(App).mount('#app')
+async function bootstrap() {
+  const app = createApp(App)
+  setupGlobDirectives(app)
+  app.mount('#app')
+}
+
+bootstrap()
