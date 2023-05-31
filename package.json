@@ -42,6 +42,7 @@
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^33.0.0",
     "stylelint-order": "^6.0.3",
+    "terser": "^5.17.6",
     "typescript": "^5.0.4",
     "vite": "^4.3.7",
     "vue": "^3.2.36",

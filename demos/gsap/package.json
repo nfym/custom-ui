@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview --port 8080",
     "type:check": "vue-tsc --noEmit --skipLibCheck",
     "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,tsx}\" --cache-location node_modules/.cache/eslint/ --fix",
     "lint:prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
