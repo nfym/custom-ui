@@ -46,6 +46,7 @@
     "vite": "^4.3.7",
     "vue": "^3.2.36",
     "vue-eslint-parser": "^9.3.0",
+    "vue-router": "4",
     "vue-tsc": "^1.6.5"
   },
   "config": {

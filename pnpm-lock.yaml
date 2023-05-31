@@ -98,6 +98,9 @@ importers:
       vue-eslint-parser:
         specifier: ^9.3.0
         version: 9.3.0(eslint@8.41.0)
+      vue-router:
+        specifier: '4'
+        version: 4.2.2(vue@3.2.36)
       vue-tsc:
         specifier: ^1.6.5
         version: 1.6.5(typescript@5.0.4)
@@ -1188,6 +1191,10 @@ packages:
     dependencies:
       '@vue/compiler-dom': 3.3.4
       '@vue/shared': 3.3.4
+    dev: true
+
+  /@vue/devtools-api@6.5.0:
+    resolution: {integrity: sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==}
     dev: true
 
   /@vue/eslint-config-prettier@7.1.0(eslint@8.41.0)(prettier@2.8.8):
@@ -5427,6 +5434,15 @@ packages:
       semver: 7.5.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /vue-router@4.2.2(vue@3.2.36):
+    resolution: {integrity: sha512-cChBPPmAflgBGmy3tBsjeoe3f3VOSG6naKyY5pjtrqLGbNEXdzCigFUHgBvp9e3ysAtFtEx7OLqcSDh/1Cq2TQ==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.5.0
+      vue: 3.2.36
     dev: true
 
   /vue-template-compiler@2.7.14:
