@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["vite/client"],
+    "noEmit": true,
+    "paths": {
+      "@/*": ["src/*"],
+      "utils/*": ["src/utils/*"],
+      "api/*": ["src/api/*"],
+      "components/*": ["src/components/*"],
+      "#/*": ["types/*"],
+      "build": ["build/*"]
+    },
+    "typeRoots": ["./node_modules/@types/", "./types"]
+  },
+  "include": ["demos/**/*.ts", "demos/**/*.d.ts", "demos/**/*.tsx", "demos/**/*.vue"],
+  "exclude": ["node_modules", "tsconfig.json", "**/dist"]
+}
