@@ -8,22 +8,77 @@
     使用wow.js 自带的 Animate.css 3.x：animated bounce
   </p>
 
-  <section class="wow animate__animated animate__fadeIn">1111111111</section>
+  <section class="wow animate__fadeInUp">1111111111</section>
 
   <section
-    class="wow animate__animated animate__bounce"
-    style="margin-top: 500px"
+    class="wow animate__bounce"
+    data-wow-duration="2s"
+    style="margin-top: 50px"
   >
     22222
+  </section>
+  <section class="wow bounce" style="margin-top: 50px">22222</section>
+
+  <section style="margin-top: 50px">
+    <h2>动画延迟</h2>
+    <div @click="tab = 'tab1'">tab1</div>
+    <div @click="tab = 'tab2'">tab2</div>
+    <div @click="tab = 'tab3'">tab3</div>
+    <ul v-if="tab === 'tab1'">
+      <li class="wow animate__fadeInUp" data-wow-delay="0s">
+        data-wow-delay="0s"
+      </li>
+      <li class="wow animate__fadeInUp" data-wow-delay="0.055s">
+        data-wow-delay="0.055s"
+      </li>
+      <li class="wow animate__fadeInUp" data-wow-delay="0.11s">
+        data-wow-delay="0.11s"
+      </li>
+      <li class="wow animate__fadeInUp" data-wow-delay="0.165s">
+        data-wow-delay="0.165s"
+      </li>
+    </ul>
+    <ul v-if="tab === 'tab2'">
+      <li class="wow animate__fadeInUp" data-wow-delay="0s">
+        data-wow-delay="0s"
+      </li>
+      <li class="wow animate__fadeInUp" data-wow-delay="0.055s">
+        data-wow-delay="0.055s"
+      </li>
+      <li class="wow animate__fadeInUp" data-wow-delay="0.11s">
+        data-wow-delay="0.11s"
+      </li>
+      <li class="wow animate__fadeInUp" data-wow-delay="0.165s">
+        data-wow-delay="0.165s"
+      </li>
+    </ul>
+    <ul v-if="tab === 'tab3'">
+      <li class="wow animate__bounceInUp" data-wow-delay="0s">
+        data-wow-delay="0s"
+      </li>
+      <li class="wow animate__bounceInUp" data-wow-delay="0.055s">
+        data-wow-delay="0.055s"
+      </li>
+      <li class="wow animate__bounceInUp" data-wow-delay="0.11s">
+        data-wow-delay="0.11s"
+      </li>
+      <li class="wow animate__bounceInUp" data-wow-delay="0.165s">
+        data-wow-delay="0.165s"
+      </li>
+    </ul>
   </section>
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import WOW from 'wow.js'
+
+const tab = ref('tab1')
+
 onMounted(() => {
   const wow = new WOW({
     boxClass: 'wow', //  default: wow , 有该class的元素将隐藏，当用户滚动时,出现后会执行指定的动画
+    animateClass: 'animate__animated', //  默认 animated，使用 Animate.css 4.x 则设置为 animate__animated
     offset: 0, // default
     mobile: true, // default
     live: true, // default
@@ -44,7 +99,21 @@ h1 {
 
 section {
   min-height: 300px;
+  padding: 1rem;
   border: 1px solid #ccc;
+}
+
+li {
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  line-height: 60px;
+  list-style: none;
+  border-bottom: 1px solid #ddd;
+}
+
+li:last-child {
+  border-bottom: none;
 }
 
 .text-wobble {
@@ -465,7 +534,7 @@ section {
   }
 
   90% {
-    opacity: 0;
+    opacity: 0.5;
   }
 
   100% {
