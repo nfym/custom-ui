@@ -5,6 +5,7 @@
     "cz": "czg",
     "dev": "vite example",
     "dev:demo": "pnpm -C demos/demo dev",
+    "build:wow": "pnpm -C demos/wow build",
     "prepare": "husky install",
     "lint:eslint": "eslint \"**/*.{vue,js,ts,jsx,tsx}\" --max-warnings 20 --cache --fix  --cache-location node_modules/.cache/eslint/.eslintcache",
     "lint:prettier": "prettier --write --cache .",

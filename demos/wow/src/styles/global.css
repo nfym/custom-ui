@@ -5,3 +5,72 @@ body {
   color: #b61a44;
   background: #fff;
 }
+
+/* 图标跳动 */
+.icon-bounce {
+  animation: rotate1 0.5s linear infinite;
+}
+@keyframes rotate1 {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(2px);
+  }
+
+  50% {
+    transform: translateY(2px) scale(1.1, 0.9);
+  }
+
+  75% {
+    transform: translateY(1px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes wobble-y {
+  0% {
+    transform: translateY(0%);
+  }
+
+  15% {
+    transform: translateY(-25%);
+  }
+
+  30% {
+    transform: translateY(20%);
+  }
+
+  45% {
+    transform: translateY(-15%);
+  }
+
+  60% {
+    transform: translateY(10%);
+  }
+
+  75% {
+    transform: translateY(-5%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.use-wobble-y-hover,
+.icon-bounce {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0.2rem;
+}
+
+.use-wobble-y-hover:hover {
+  animation: wobble-y 1s linear;
+}
+
+
