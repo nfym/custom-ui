@@ -1,7 +1,7 @@
 /**
  * 是否为 Number、String、symbol、boolean 数据类型
- * @param value
- * @returns
+ * @param value unknown
+ * @return boolean
  */
 export default function isPrimitive(value: unknown) {
   return (

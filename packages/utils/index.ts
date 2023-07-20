@@ -7,9 +7,7 @@ export { default as base64 } from './src/string/base64'
 export { default as camelize } from './src/string/camelize'
 
 // is 数据类型相关
-export { default as is } from './src/is'
-export { isNull } from './src/is'
-export { isDef } from './src/is'
+export { isNull, isDef, getRawType, isType } from './src/is'
 
 // format 数据结构相关
 
