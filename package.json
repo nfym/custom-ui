@@ -3,8 +3,10 @@
   "private": true,
   "scripts": {
     "cz": "czg",
-    "dev": "vite example",
+    "dev": "pnpm dev:example & pnpm dev:wow",
+    "dev:example": "pnpm -C example dev",
     "dev:demo": "pnpm -C demos/demo dev",
+    "dev:wow": "pnpm -C demos/wow dev",
     "build:wow": "pnpm -C demos/wow build",
     "prepare": "husky install",
     "lint:eslint": "eslint \"**/*.{vue,js,ts,jsx,tsx}\" --max-warnings 20 --cache --fix  --cache-location node_modules/.cache/eslint/.eslintcache",
