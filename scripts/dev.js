@@ -1,6 +1,6 @@
 import { execa } from 'execa'
 import inquirer from 'inquirer'
-import config from '../config'
+import { config } from '../config.js'
 
 async function devAll() {
   config.map((item) => {

@@ -1,6 +1,7 @@
 {
   "name": "custom-ui",
   "private": true,
+  "type": "module",
   "scripts": {
     "cz": "czg",
     "dev": "node ./scripts/dev.js",
