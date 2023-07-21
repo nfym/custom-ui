@@ -3,6 +3,7 @@ export function test() {
 }
 
 // String
+// export * from './src/string/base64'
 export { default as base64 } from './src/string/base64'
 export { default as camelize } from './src/string/camelize'
 

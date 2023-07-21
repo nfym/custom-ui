@@ -19,7 +19,7 @@ module.exports = {
     {
       files: '*.json',
       options: {
-        printWidth: 200
+        parser: 'json'
       }
     }
   ]

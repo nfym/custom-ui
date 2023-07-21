@@ -17,20 +17,13 @@
     "declaration": false,
     "noImplicitAny": false,
     "removeComments": true,
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
+    "lib": ["ESNext", "DOM"],
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "typeRoots": [
-      "./node_modules/@types/",
-      "./types"
-    ]
+    "typeRoots": ["./node_modules/@types/", "./types"],
+    "paths": {
+      "@packages/*": ["packages/*"]
+    }
   },
-  "exclude": [
-    "node_modules",
-    "**/__tests__",
-    "dist/**"
-  ]
+  "exclude": ["node_modules", "**/__tests__", "dist/**"]
 }
