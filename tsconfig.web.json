@@ -19,6 +19,5 @@
     "demos/**/*.d.ts",
     "demos/**/*.tsx",
     "demos/**/*.vue"
-  ],
-  "exclude": ["node_modules", "tsconfig.json", "**/dist"]
+  ]
 }
