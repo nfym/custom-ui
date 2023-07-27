@@ -1,5 +1,8 @@
 {
   "name": "@custom-ui/utils",
   "main": "index.ts",
-  "license": "ISC"
+  "license": "ISC",
+  "scripts": {
+    "build": "vite build"
+  }
 }

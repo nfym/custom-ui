@@ -13,14 +13,14 @@ module.exports = {
   htmlWhitespaceSensitivity: 'ignore', // HTML空白灵敏度,空格被认为是不敏感的
   // htmlWhitespaceSensitivity: 'css', // 根据显示样式决定 html 要不要折行
   vueIndentScriptAndStyle: false, // vue 文件中的 script、style标签不缩进
-  endOfLine: 'lf', // 换行符使用 lf
+  endOfLine: 'lf' // 换行符使用 lf
   // 覆写默认配置,为某些特定文件制定特定配置
-  overrides: [
-    {
-      files: '*.json',
-      options: {
-        parser: 'json'
-      }
-    }
-  ]
+  // overrides: [
+  //   {
+  //     files: '*.json',
+  //     options: {
+  //       parser: 'json'
+  //     }
+  //   }
+  // ]
 }
