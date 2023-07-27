@@ -1,5 +1,5 @@
 /**
- * 获取数据类型，返回结果为 Number、String、Object、Array 等
+ * 获取数据原始类型
  * @param value
  * @returns
  */
