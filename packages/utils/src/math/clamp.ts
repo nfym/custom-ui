@@ -4,7 +4,7 @@
  * @param {*} min
  * @param {*} max
  */
-export function clamp(value: number, min: number, max: number): number {
+export default function clamp(value: number, min: number, max: number): number {
   if (value < min) {
     return min
   } else if (value > max) {

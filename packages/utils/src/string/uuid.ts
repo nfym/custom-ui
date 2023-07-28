@@ -1,15 +1,15 @@
 /**
  * @description 生成随机id
- * @param {number} length
- * @param {string} chars
  */
-export function uuid(length: number, chars: any) {
-  chars =
-    chars || '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+export function uuid() {
+  let res = ''
+  const template = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
 
-  length = length || 8
-  let result = ''
-  for (let i = length; i > 0; --i)
-    result += chars[Math.floor(Math.random() * chars.length)]
-  return result
+  for (let i = 0, len = template.length; i < len; i += 1) {
+    const s = template[i]
+    const r = (Math.random() * 16) | 0
+    const v = s === 'x' ? r : s === 'y' ? (r & 0x3) | 0x8 : s
+    res += v.toString(16)
+  }
+  return res
 }

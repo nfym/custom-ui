@@ -1,3 +1,5 @@
+import isType from './isType'
+
 export interface ObjectType<T> {
   [key: string | symbol]: T
 }
@@ -35,3 +37,16 @@ export function isPrototype(value: any): boolean {
     (typeof Ctor === 'function' && Ctor.prototype) || Object.prototype
   return value === proto
 }
+
+export function isRegExp(value: unknown): value is RegExp {
+  return isType(value, 'RegExp')
+}
+
+export function isDate(value: unknown): value is Date {
+  return isType(value, 'Date')
+}
+
+export function isError(value: any): value is Error {
+  return isType(value, 'Error')
+}
+// TODO isMap isSet isWeakMap isWeakSet

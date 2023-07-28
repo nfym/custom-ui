@@ -1,8 +1,17 @@
 import isType from './isType'
 
+/**
+ * 是否 number 类型
+ */
 export function isNumber(value: unknown): value is number {
   return isType(value, 'Number')
 }
+
+/**
+ * 是否数值，包括数字类型和数值字符串
+ */
+export const isNumeric = (value: any) =>
+  !Array.isArray(value) && value - parseFloat(value) + 1 >= 0
 
 /**
  * 是否整数

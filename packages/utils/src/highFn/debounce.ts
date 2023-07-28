@@ -1,32 +1,19 @@
 /**
- *
+ * 防抖
  * @param fn
- * @param wait
+ * @param delay
  * @returns
  */
-// @ts-nocheck
-// eslint-disable-next-line @typescript-eslint/ban-types
-function debounce(fn: Function, wait: number) {
-  /**
-   function sayLove(name) {
-    return name;
-  }
-  debounce(sayLove, 200)('xuxiaoxi');
-   */
+export function debounce<T extends []>(fn: (...args: T) => void, delay = 60) {
+  let timer: number | null = null
 
-  let timer: any = null
-  return function () {
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
-    const context = this
-    // eslint-disable-next-line prefer-rest-params
-    const args = arguments
-    if (timer !== null) {
+  return (...args: T) => {
+    if (timer) {
       clearTimeout(timer)
     }
-    timer = setTimeout(() => {
-      fn.apply(context, args)
-    }, wait)
+
+    timer = window.setTimeout(() => {
+      fn.apply(this, args)
+    }, delay)
   }
 }
-
-export default debounce

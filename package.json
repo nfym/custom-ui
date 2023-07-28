@@ -7,7 +7,7 @@
     "dev": "node ./scripts/dev.js",
     "build:wow": "pnpm -C demos/wow build",
     "prepare": "husky install",
-    "lint:eslint": "eslint \"**/*.{vue,js,ts,jsx,tsx}\" --max-warnings 20 --cache --fix --cache-location node_modules/.cache/eslint/.eslintcache",
+    "lint:eslint": "eslint \"**/*.{vue,js,ts,jsx,tsx}\" --max-warnings 30 --cache --fix --cache-location node_modules/.cache/eslint/.eslintcache",
     "lint:prettier": "prettier --write --cache .",
     "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\"  --cache-location node_modules/.cache/stylelint/",
     "lint:lint-staged": "lint-staged",

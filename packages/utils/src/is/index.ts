@@ -2,8 +2,8 @@ import getType from './getType'
 import isType from './isType'
 
 import { isNil } from './primitive'
-import { isObject, isObjectLike, isPrototype } from './object'
-import { isArray, isArrayLike } from './array'
+import { isObject, isPrototype } from './object'
+import { isArrayLike } from './array'
 import { isFunction } from './function'
 
 export { default as getType } from './getType'
@@ -18,10 +18,26 @@ export {
   isOdd
 } from './number'
 export { isString, isIntegerKey } from './string'
-export { isPrimitive, isNil } from './primitive'
+export {
+  isNull,
+  isUnNull,
+  isUnDef,
+  isDef,
+  isDefAndUnNull,
+  isNil,
+  isBoolean,
+  isPrimitive
+} from './primitive'
 export { isArray, isArrayLike } from './array'
-export { isObject, isObjectLike, isPrototype } from './object'
-export { isFunction } from './function'
+export {
+  isObject,
+  isObjectLike,
+  isPrototype,
+  isRegExp,
+  isDate,
+  isError
+} from './object'
+export { isFunction, isArguments, isAsyncLike, isAsync } from './function'
 
 export function isPromise<T = any>(value: unknown): value is Promise<T> {
   return (
@@ -30,10 +46,6 @@ export function isPromise<T = any>(value: unknown): value is Promise<T> {
     isFunction(value.then) &&
     isFunction(value.catch)
   )
-}
-
-export function isError(value: any): value is Error {
-  return isType(value, 'Error')
 }
 
 /**

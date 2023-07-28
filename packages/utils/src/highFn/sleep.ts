@@ -2,7 +2,6 @@
 /**
  * @description 让 async 内部程序等待一定时间后再执行
  * @param milliseconds
- * @returns
  */
 const sleep = async (milliseconds: number) =>
   new Promise((resolve) => setTimeout(resolve, milliseconds))

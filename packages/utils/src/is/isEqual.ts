@@ -49,8 +49,6 @@ export function isEqual(value: any, other: any): boolean {
 
 /**
  * @Description: 两个数据是否相同,不依赖其他函数，来自https://www.30secondsofcode.org/js/s/equals/
- * @param {any} value
- * @param {any} other
  */
 export const equals = (a: any, b: any): boolean => {
   if (a === b) return true
