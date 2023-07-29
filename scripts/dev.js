@@ -37,7 +37,7 @@ function runInquirerCommand() {
         type: 'checkbox',
         message: '请选择要启动的应用',
         choices: [
-          { name: '运行全部' },
+          // { name: '运行全部' },
           ...config.map((item) => {
             const { name, packageName, port } = item
             return {
