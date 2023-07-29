@@ -1,6 +1,21 @@
 {
   "name": "@custom-ui/utils",
-  "main": "index.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/customui-util.umd.cjs",
+  "module": "./dist/customui-util.js",
+  "exports": {
+    ".": {
+      "import": "./dist/customui-util.js",
+      "require": "./dist/customui-util.umd.cjs"
+    },
+    "./other": {
+      "import": "./dist/other.js",
+      "require": "./dist/other.cjs"
+    }
+  },
   "license": "ISC",
   "scripts": {
     "build": "vite build"
