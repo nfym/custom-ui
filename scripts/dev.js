@@ -12,21 +12,21 @@ const config = [
     name: 'demo 空模板',
     packageName: '@demos/demo',
     port: 4000,
-    command: 'pnpm pnpm -C demos/demo dev'
+    command: 'pnpm -C demos/demo dev'
   },
   {
     name: 'wow 动画',
     packageName: '@demos/wow',
     port: 4010,
-    command: 'pnpm pnpm -C demos/wow dev'
+    command: 'pnpm -C demos/wow dev'
+  },
+  {
+    name: 'gsap 动画',
+    packageName: '@demos/gsap',
+    port: 4020,
+    command: 'pnpm -C demos/gsap dev'
   }
 ]
-
-async function devAll() {
-  config.map((item) => {
-    execa(item.command, { stdio: 'inherit' })
-  })
-}
 
 // 运行选择命令
 function runInquirerCommand() {
@@ -53,15 +53,8 @@ function runInquirerCommand() {
       }
     ])
     .then(async (answers) => {
-      let choiceAll = false // 是否选择全部
-
       answers.dev.map((answer) => {
-        if (answer === '运行全部') {
-          choiceAll = true
-          devAll()
-        } else {
-          !choiceAll && execa(answer.command, { stdio: 'inherit' })
-        }
+        execa(answer.command, { stdio: 'inherit' })
       })
     })
 }
