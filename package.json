@@ -6,6 +6,7 @@
     "cz": "czg",
     "dev": "node ./scripts/dev.js",
     "build": "node ./scripts/build.js",
+    "build:deplay": "pnpm -C example build",
     "preview": "node ./scripts/preview.js",
     "type:check": "vue-tsc --noEmit --skipLibCheck",
     "lint:eslint": "eslint \"**/*.{vue,js,ts,jsx,tsx}\" --max-warnings 30 --cache --fix --cache-location node_modules/.cache/eslint/.eslintcache",
