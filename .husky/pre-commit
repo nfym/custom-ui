@@ -2,6 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npm run lint:eslint
+npm run type:check
 
 npm run lint:lint-staged
 

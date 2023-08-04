@@ -7,6 +7,7 @@ const config = [
     packageName: '@example',
     command: 'pnpm -C example build'
   },
+  // lint-stage 测试
   // {
   //   name: 'demos all',
   //   packageName: '@demos/**',
