@@ -5,7 +5,7 @@
   "scripts": {
     "cz": "czg",
     "dev": "node ./scripts/dev.js",
-    "build:wow": "pnpm -C demos/wow build",
+    "build": "node ./scripts/build.js",
     "prepare": "husky install",
     "lint:eslint": "eslint \"**/*.{vue,js,ts,jsx,tsx}\" --max-warnings 30 --cache --fix --cache-location node_modules/.cache/eslint/.eslintcache",
     "lint:prettier": "prettier --write --cache .",

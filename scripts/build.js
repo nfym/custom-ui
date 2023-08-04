@@ -5,26 +5,32 @@ const config = [
   {
     name: 'example',
     packageName: '@example',
-    port: 3000,
-    command: 'pnpm vite example'
+    command: 'pnpm -C example build'
   },
+  // {
+  //   name: 'demos all',
+  //   packageName: '@demos/**',
+  //   command: 'pnpm -F "./demos/**" build'
+  // },
   {
     name: 'demo 空模板',
     packageName: '@demos/demo',
-    port: 4000,
-    command: 'pnpm -C demos/demo dev'
+    command: 'pnpm -C demos/demo build'
   },
   {
     name: 'wow + animate.css 动画',
     packageName: '@demos/wow',
-    port: 4010,
-    command: 'pnpm -C demos/wow dev'
+    command: 'pnpm -C demos/wow build'
   },
   {
     name: 'gsap 动画',
     packageName: '@demos/gsap',
-    port: 4020,
-    command: 'pnpm -C demos/gsap dev'
+    command: 'pnpm -C demos/gsap build'
+  },
+  {
+    name: 'utils',
+    packageName: '@packages/utils',
+    command: 'pnpm -C packages/utils build'
   }
 ]
 
@@ -33,27 +39,22 @@ function runInquirerCommand() {
   inquirer
     .prompt([
       {
-        name: 'dev', // 存储答案时要使用的名称
+        name: 'build', // 存储答案时要使用的名称
         type: 'checkbox',
         message: '请选择要启动的应用',
         choices: [
-          // { name: '运行全部' },
           ...config.map((item) => {
-            const { name, packageName, port } = item
+            const { name, packageName } = item
             return {
-              name: `${name} (${packageName} : ${port})`,
+              name: `${name} (${packageName} )`,
               value: item
-              // disabled: occupiedList.find((item) => item.package === key)
-              //   .isOccupied
-              //   ? '已启动'
-              //   : false
             }
           })
         ]
       }
     ])
     .then(async (answers) => {
-      answers.dev.map((answer) => {
+      answers.build.map((answer) => {
         execa(answer.command, { stdio: 'inherit' })
       })
     })
