@@ -6,12 +6,13 @@
     "cz": "czg",
     "dev": "node ./scripts/dev.js",
     "build": "node ./scripts/build.js",
-    "prepare": "husky install",
+    "preview": "node ./scripts/preview.js",
+    "type:check": "vue-tsc --noEmit --skipLibCheck",
     "lint:eslint": "eslint \"**/*.{vue,js,ts,jsx,tsx}\" --max-warnings 30 --cache --fix --cache-location node_modules/.cache/eslint/.eslintcache",
     "lint:prettier": "prettier --write --cache .",
     "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\"  --cache-location node_modules/.cache/stylelint/",
     "lint:lint-staged": "lint-staged",
-    "type:check": "vue-tsc --noEmit --skipLibCheck"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@custom-ui/components": "workspace:*",
