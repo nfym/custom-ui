@@ -1,23 +1,21 @@
 {
+  // 继承基础配置
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "types": ["vite/client"],
-    "noEmit": true,
-    "paths": {
-      "@/*": ["src/*"],
-      "utils/*": ["src/utils/*"],
-      "api/*": ["src/api/*"],
-      "components/*": ["src/components/*"],
-      "#/*": ["types/*"],
-      "build": ["build/*"]
-    },
-    "typeRoots": ["./node_modules/@types/", "./types"]
+    // 用于启用项目的组合编译。通过项目引用(Project References)功能集成到一个 tsconfig.json 中
+    "composite": true,
+    // 依赖浏览器的 DOM API
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    // ↓将 class 声明中的字段语义从 [[Set]] 变更到 [[Define]]
+    "useDefineForClassFields": true,
   },
   "include": [
     "packages",
-    "demos/**/*.ts",
-    "demos/**/*.d.ts",
-    "demos/**/*.tsx",
-    "demos/**/*.vue"
+    "types/vite-env.d.ts",
+    "{example,demos}/**/*.{vue,ts,tsx,d.ts}"
   ]
 }
