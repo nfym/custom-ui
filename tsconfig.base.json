@@ -57,15 +57,10 @@
     "baseUrl": ".",
     // ↓模块名到基于 baseUrl 的路径映射的列表
     "paths": {
-      "@packages/*": [
-        "packages/*"
-      ]
+      "@packages/*": ["packages/*"]
     },
     // ↓要包含的类型声明文件路径列表。
-    "typeRoots": [
-      "./node_modules/@types/",
-      "./types"
-    ],
+    "typeRoots": ["./node_modules/@types/", "./types"],
     // ↓与 esModuleInterop: true 配合允许从 commonjs 的依赖中直接按 import XX from 'xxx' 的方式导出 default 模块
     "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入。这并不影响代码的输出，仅为了类型检查
     "esModuleInterop": true, // 支持合成模块的默认导入
@@ -95,9 +90,5 @@
     // ↓为装饰器提供元数据的支持
     "emitDecoratorMetadata": true
   },
-  "exclude": [
-    "**/node_modules",
-    "**/__tests__",
-    "**/dist"
-  ]
+  "exclude": ["**/node_modules", "**/__tests__", "**/tests/**", "**/dist"]
 }

@@ -5,17 +5,9 @@
     // 用于启用项目的组合编译。通过项目引用(Project References)功能集成到一个 tsconfig.json 中
     "composite": true,
     // 依赖浏览器的 DOM API
-    "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     // ↓将 class 声明中的字段语义从 [[Set]] 变更到 [[Define]]
-    "useDefineForClassFields": true,
+    "useDefineForClassFields": true
   },
-  "include": [
-    "packages",
-    "types/vite-env.d.ts",
-    "{example,demos}/**/*.{vue,ts,tsx,d.ts}"
-  ]
+  "include": ["packages", "{example,demos}/**/src/**/*.{vue,js,ts,jsx,tsx}"]
 }
