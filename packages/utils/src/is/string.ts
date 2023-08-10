@@ -1,5 +1,7 @@
 import isType from './isType'
-
+/**
+ * @description 判断是不是 String
+ */
 export function isString(value: unknown): value is string {
   return isType(value, 'String')
 }
@@ -21,6 +23,10 @@ export const isIntegerKey = (key: string) =>
   key[0] !== '-' &&
   '' + parseInt(key, 10) === key
 
+/**
+ * @description 判断是不是数字型的字符串
+ * @ 例子
+ */
 export function isPercentage(val: any): val is string {
   return typeof val === 'string' && val.slice(-1) === '%'
 }
