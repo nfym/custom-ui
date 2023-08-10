@@ -31,6 +31,19 @@ export function isObjectLike(value: any): value is ObjectType<any> {
   return value !== null && typeof value === 'object'
 }
 
+/**
+ * @description: 是否对象类型，包括object, 剔除了array、 null 和 function
+ */
+export function isObjectOnly(value: any): value is ObjectType<any> {
+  /**
+   * isObjectLike({}) => true
+   * isObjectLike([1, 2, 3]) => false
+   * isObjectLike(Function) => false
+   * isObjectLike(null) => false
+   */
+  return value !== null && isType(value, 'Object')
+}
+
 export function isPrototype(value: any): boolean {
   const Ctor = value && value.constructor
   const proto =
