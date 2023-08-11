@@ -1,6 +1,8 @@
 import { execa } from 'execa'
 import inquirer from 'inquirer'
 
+const typeCheck = 'pnpm type:check && '
+
 const config = [
   {
     name: 'example',
@@ -28,7 +30,7 @@ const config = [
     command: 'pnpm -C demos/gsap build'
   },
   {
-    name: 'utils',
+    name: 'utils 工具方法',
     packageName: '@packages/utils',
     command: 'pnpm -C packages/utils build'
   }
@@ -41,7 +43,7 @@ function runInquirerCommand() {
       {
         name: 'build', // 存储答案时要使用的名称
         type: 'checkbox',
-        message: '请选择要启动的应用',
+        message: '请选择要构建的应用',
         choices: [
           ...config.map((item) => {
             const { name, packageName } = item
@@ -55,7 +57,7 @@ function runInquirerCommand() {
     ])
     .then(async (answers) => {
       answers.build.map((answer) => {
-        execa(answer.command, { stdio: 'inherit' })
+        execa(typeCheck + answer.command, { stdio: 'inherit' })
       })
     })
 }

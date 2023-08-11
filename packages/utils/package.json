@@ -10,10 +10,6 @@
     ".": {
       "import": "./dist/customui-util.js",
       "require": "./dist/customui-util.umd.cjs"
-    },
-    "./other": {
-      "import": "./dist/other.js",
-      "require": "./dist/other.cjs"
     }
   },
   "license": "ISC",

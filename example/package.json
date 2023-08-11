@@ -2,6 +2,6 @@
   "name": "@custom-ui/example",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build"
+    "build": "vite build"
   }
 }

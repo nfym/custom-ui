@@ -35,7 +35,7 @@ function runInquirerCommand() {
       {
         name: 'preview', // 存储答案时要使用的名称
         type: 'checkbox',
-        message: '请选择要启动的应用',
+        message: '请选择要预览的应用，请确保已经build',
         choices: [
           ...config.map((item) => {
             const { name, packageName, port } = item
