@@ -18,17 +18,11 @@ export default defineConfig(({ command, mode }) => {
     resolve: {
       // 路径别名
       alias: [
-        { find: '@', replacement: pathResolve('src') },
+        { find: '~', replacement: pathResolve('src') },
         { find: '#', replacement: pathResolve('src/types') },
         { find: 'api', replacement: pathResolve('src/api') },
         { find: 'components', replacement: pathResolve('src/components') },
-        { find: 'utils', replacement: pathResolve('src/utils') },
-        { find: 'build', replacement: pathResolve('build') },
-        // 处理 vue-i18n 的控制台警告信息
-        {
-          find: 'vue-i18n',
-          replacement: 'vue-i18n/dist/vue-i18n.cjs.js'
-        }
+        { find: 'utils', replacement: pathResolve('src/utils') }
       ]
     },
     server: {
