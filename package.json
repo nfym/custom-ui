@@ -13,7 +13,8 @@
     "lint:prettier": "prettier --write --cache .",
     "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\"  --cache-location node_modules/.cache/stylelint/",
     "lint:lint-staged": "lint-staged",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "preinstall": "node ./scripts/preinstall.js"
   },
   "dependencies": {
     "@custom-ui/components": "workspace:*",
@@ -74,5 +75,9 @@
       "pnpm lint:stylelint",
       "pnpm lint:prettier"
     ]
+  },
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
   }
 }
