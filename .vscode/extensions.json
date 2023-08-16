@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "vue.vscode-typescript-vue-plugin",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "sonarsource.sonarlint-vscode",
+    "mikestead.dotenv",
+    "arkipedia.i18n-ally-pinyin"
+  ]
+}

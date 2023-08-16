@@ -5,12 +5,10 @@ import { OUTPUT_DIR, BASE_NAME } from './build/constant'
 import { resolve } from 'path'
 const pathResolve = (dir: string) => resolve(__dirname, dir)
 
-// https://vitejs.dev/config/
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ mode }) => {
   const root = process.cwd()
   const env = loadEnv(mode, root)
-  // const isDev = command === 'serve' // 开发环境
-  // const isBuild = command === 'build' // 生产环境
+
   return {
     plugins: [vue()],
     base: BASE_NAME,
