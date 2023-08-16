@@ -1,6 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { OUTPUT_DIR, BASE_NAME } from './build/constant'
+import { OUTPUT_DIR, DEPLOY_BASE_URL } from './build/constant'
 // 指定解析路径
 import { resolve } from 'path'
 const pathResolve = (dir: string) => resolve(__dirname, dir)
@@ -11,7 +11,8 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [vue()],
-    base: BASE_NAME,
+    base: DEPLOY_BASE_URL,
+    root: './', // 默认的 process.cwd() 获取到当前工作目录 custom-ui
     resolve: {
       // 路径别名
       alias: [

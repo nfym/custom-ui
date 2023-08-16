@@ -1,6 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { OUTPUT_DIR, BASE_NAME } from './build/constant'
+import { OUTPUT_DIR } from './build/constant'
 // 指定解析路径
 import { resolve } from 'path'
 const pathResolve = (dir: string) => resolve(__dirname, dir)
@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [vue()],
-    base: BASE_NAME,
+    base: './',
     resolve: {
       // 路径别名
       alias: [
