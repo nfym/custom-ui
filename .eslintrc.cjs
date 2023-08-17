@@ -13,10 +13,15 @@ module.exports = {
     '@vue/typescript/recommended',
     '@vue/prettier'
   ],
+  // 指定 vue 解析器
   parser: 'vue-eslint-parser',
   parserOptions: {
+    // 配置 TypeScript 解析器
+    parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest', // 支持的es版本
-    sourceType: 'module' // 代模块类型，默认为script，我们设置为module
+    sourceType: 'module', // 代模块类型，默认为script，我们设置为module
+    // TypeScript 解析器也要负责 vue 文件的 <script>
+    extraFileExtensions: ['.vue']
   },
   plugins: ['vue', '@typescript-eslint', 'prettier'],
   rules: {

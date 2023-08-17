@@ -8,7 +8,6 @@
 import { test } from '@custom-ui/utils'
 import { UiButton } from '@custom-ui/components'
 import TestComp from './components/TestComp.vue'
-// import TestComp from '@/components/TestComp.vue'
 
 test()
 </script>

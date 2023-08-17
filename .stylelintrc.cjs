@@ -4,7 +4,7 @@ module.exports = {
     'stylelint-config-standard',
     'stylelint-config-html/html',
     'stylelint-config-html/vue',
-    'stylelint-config-prettier',
+    // 'stylelint-config-prettier',
     'stylelint-config-rational-order'
   ],
   customSyntax: 'postcss-less',
