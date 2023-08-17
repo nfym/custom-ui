@@ -2,14 +2,9 @@
   "compilerOptions": {
     /* 基本选项 */
     // ↓指定ECMAScript目标版本 "ES3"（默认）， "ES5"， "ES6"/ "ES2015"， "ES2016"， "ES2017"或 "ESNext" (最新版本)。
-    "target": "ESNext",
+    "target": "es2022",
     // ↓编译过程中需要引入的库文件的列表。
-    "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.Iterable"
-      // "WebWorker"
-    ],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     // ↓指定生成哪个模块系统代码： "None"， "CommonJS"， "AMD"， "System"， "UMD"， "ES6"或 "ES2015"。
     "module": "ESNext",
     // ↓是否允许 javascript 文件
@@ -28,20 +23,10 @@
     "isolatedModules": true,
     /* 严格的类型检查选项 */
     // ↓是否启用所有严格类型检查选项。相当于启用
-    // noImplicitAny, noImplicitThis, alwaysStrict， strictNullChecks和 strictFunctionTypes和strictPropertyInitialization
+    // noImplicitAny, noImplicitThis, alwaysStrict，strictNullChecks, strictFunctionTypes,strictPropertyInitialization
     "strict": true,
-    // ↓是否在表达式和声明上有隐含的 any 类型时报错
-    "noImplicitAny": true,
-    "noImplicitThis": true, // 当 this 表达式值为 any 类型的时候，生成一个错误
-    "alwaysStrict": true, // 以严格模式检查每个模块，并在每个文件里加入 'use strict'
-    // ↓启用严格的 null 检查。 在严格的 null检查模式下， null和 undefined值不包含在任何类型里，只允许用它们自己和 any来赋值（有个例外， undefined可以赋值到 void）。
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
     "strictBindCallApply": true,
     /* 额外的检查 */
-    // ↓是否在有未使用的局部变量抛错。
-    "noUnusedLocals": true,
     // ↓是否在有声明了但未使用的函数参数时报告错误。
     "noUnusedParameters": true,
     // ↓是否在函数缺少返回语句时报告错误
@@ -55,9 +40,12 @@
     "moduleResolution": "Node",
     // ↓解析非相对模块名的基准目录。
     "baseUrl": ".",
-    // ↓模块名到基于 baseUrl 的路径映射的列表
+    // ↓模块名到基于 baseUrl 的路径映射的列表,"paths"是相对于"baseUrl"进行解析
     "paths": {
-      "@packages/*": ["packages/*"]
+      "@custom-ui": ["packages/*"],
+      "@custom-ui/utils": ["packages/utils/index.ts"],
+      "@/*": ["./example/src/*"],
+      "~/*": ["./example/src/*"]
     },
     // ↓要包含的类型声明文件路径列表。
     "typeRoots": ["./node_modules/@types/", "./types"],
@@ -67,6 +55,7 @@
     // 允许引入 .json 模块
     "resolveJsonModule": true,
     /* 编译输出选项 */
+    "diagnostics": true, // 打印诊断信息
     // ↓是否生成编译后的 js 文件
     "noEmit": true, // 只进行类型检查而不需要实际编译运行代码
     // ↓是否生成编译后的 .d.ts 声明文件
