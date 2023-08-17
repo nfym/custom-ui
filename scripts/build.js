@@ -12,7 +12,7 @@ const config = [
   // {
   //   name: 'demos all',
   //   packageName: '@demos/**',
-  //   command: 'pnpm -F "./demos/**" build'
+  //   command: 'pnpm run type:web && pnpm -F "./demos/**" build'
   // },
   {
     name: 'demo 空模板',
