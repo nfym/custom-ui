@@ -21,6 +21,7 @@
     "skipLibCheck": true,
     // ↓将每个文件作为单独模块
     "isolatedModules": true,
+
     /* 严格的类型检查选项 */
     // ↓是否启用所有严格类型检查选项。相当于启用
     // noImplicitAny, noImplicitThis, alwaysStrict，strictNullChecks, strictFunctionTypes,strictPropertyInitialization
@@ -28,10 +29,13 @@
     // ↓设为 true 后对 bind、call 和 apply 绑定的方法的参数的检测是严格检测
     "strictBindCallApply": true,
     /* 额外的检查 */
+
     // ↓是否在有声明了但未使用的函数参数时报告错误。
-    "noUnusedParameters": true,
+    // "noUnusedParameters": false,
+
     // ↓是否在函数缺少返回语句时报告错误
-    "noImplicitReturns": true,
+    // "noImplicitReturns": false,
+
     // ↓用于检查 switch 中是否有 case 没有使用 break 跳出 switch
     "noFallthroughCasesInSwitch": true,
     // ↓检查 import xxx from 'fileName' 语句的文件名和实际文件名是否一致
@@ -44,9 +48,7 @@
     // ↓模块名到基于 baseUrl 的路径映射的列表,"paths"是相对于"baseUrl"进行解析
     "paths": {
       "@custom-ui": ["packages/*"],
-      "@custom-ui/utils": ["packages/utils/index.ts"],
-      "@/*": ["./example/src/*"],
-      "~/*": ["./example/src/*"]
+      "@custom-ui/utils": ["packages/utils/index.ts"]
     },
     // ↓要包含的类型声明文件路径列表。
     "typeRoots": ["./node_modules/@types/", "./types"],

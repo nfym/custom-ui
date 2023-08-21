@@ -8,7 +8,7 @@ async function bootstrap() {
 
   window.addEventListener(
     'error',
-    (event) => {
+    (event: ErrorEvent) => {
       // 过滤js error
       const target = event.target || event.srcElement
       const isElementTarget =
@@ -17,8 +17,7 @@ async function bootstrap() {
         target instanceof HTMLImageElement
       if (!isElementTarget) return false
 
-      // 上报资源地址
-      window.alert('更新了，引入原来资源错误')
+      window.alert('项目更新了，引入原来资源错误')
     },
     true
   )

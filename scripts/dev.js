@@ -25,6 +25,12 @@ const config = [
     packageName: '@demos/gsap',
     port: 4020,
     command: 'pnpm -C demos/gsap dev'
+  },
+  {
+    name: 'update-build',
+    packageName: '@demos/gsap',
+    port: 4030,
+    command: 'pnpm -C demos/update-build dev'
   }
 ]
 

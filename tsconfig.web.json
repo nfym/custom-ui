@@ -10,10 +10,5 @@
     "useDefineForClassFields": true,
     "types": ["vite/client"]
   },
-  "include": [
-    "types",
-    "packages",
-    "./example/src/**/*.{vue,js,ts,jsx,tsx}",
-    "./demos/**/src/**/*.{vue,js,ts,jsx,tsx}"
-  ]
+  "include": ["packages", "types", "demos", "example"]
 }

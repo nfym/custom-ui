@@ -23,7 +23,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.vue', '**/*.vue', '*.html', '**/*.html'],
+      files: ['**/*.(css|html|vue)'],
       customSyntax: 'postcss-html',
       rules: {
         'selector-pseudo-class-no-unknown': [
