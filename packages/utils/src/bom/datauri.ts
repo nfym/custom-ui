@@ -1,4 +1,4 @@
-import { isDataUrl } from '../is/bom'
+// import { isDataUrl } from '../is/bom'
 
 /**
  * Converts an image at `url` to base64-encoded data uri.

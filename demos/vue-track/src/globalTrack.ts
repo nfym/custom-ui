@@ -1,8 +1,8 @@
 import {
-  write2Storage,
+  // write2Storage,
   getBaseInfo,
-  getTemplateInfo,
-  throttle,
+  // getTemplateInfo,
+  // throttle,
   DEDAULT_KEY,
   BASE_KEY
 } from './utils'
@@ -12,16 +12,16 @@ import type { App, DirectiveBinding } from 'vue'
 
 type anyMap = Indexable<any>
 type Fn<V> = (...arg: unknown[]) => V
-type EventMap = '' | 'click'
+// type EventMap = '' | 'click'
 
-const printLog = (tag: string, value: string) => {
-  console.log(
-    `%c%c${tag}%c${value}`,
-    'line-height:28px;',
-    'padding:2px 4px;background:#3173f6;color:#fff;font-size:12px;border-radius:4px 0 0 4px;',
-    'padding:2px 4px;background:#fff;color:#3173f6;font-size:12px;border-radius:0 4px 4px 0;'
-  )
-}
+// const printLog = (tag: string, value: string) => {
+//   console.log(
+//     `%c%c${tag}%c${value}`,
+//     'line-height:28px;',
+//     'padding:2px 4px;background:#3173f6;color:#fff;font-size:12px;border-radius:4px 0 0 4px;',
+//     'padding:2px 4px;background:#fff;color:#3173f6;font-size:12px;border-radius:0 4px 4px 0;'
+//   )
+// }
 
 class TrackPoint {
   intervalTime: number
@@ -44,7 +44,8 @@ class TrackPoint {
    * 埋点轮询上传
    * @param immediate 是否立即上传历史埋点数据
    */
-  init(immediate = true): void {
+  init(): // mmediate = true
+  void {
     this.baseInfo = getBaseInfo()
     LocalStorage.set(BASE_KEY, this.baseInfo)
     this.addViewListener()
@@ -72,13 +73,18 @@ class TrackPoint {
   recordTrackInfo(el: HTMLElement, binding: DirectiveBinding): any {
     console.log(
       '🚀 ~ file: globalTrack.ts:67 ~ TrackPoint ~ recordTrackInfo ~ el:',
-      el.dataset
+      el.dataset,
+      binding
     )
   }
 
   // 添加页面路由更改监听
   addViewListener() {
     router.beforeEach((to, from) => {
+      console.log(
+        '🚀 ~ file: globalTrack.ts:84 ~ TrackPoint ~ router.beforeEach ~ from:',
+        from
+      )
       // 记录页面 stay 停留时间
       if (to) {
         const stayTime = Date.now() - this.pageStartTime
@@ -90,7 +96,7 @@ class TrackPoint {
       }
     })
 
-    router.afterEach((to, from) => {
+    router.afterEach(() => {
       //  记录PV
       this.pv += 1
 

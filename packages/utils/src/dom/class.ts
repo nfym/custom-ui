@@ -1,5 +1,5 @@
 const rclass = /[\t\r\n\f]/g
-const rnotwhite = /\S+/g
+// const rnotwhite = /\S+/g
 
 const fillSpaces = (str: string) => ` ${str} `
 

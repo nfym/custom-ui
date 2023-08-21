@@ -5,20 +5,16 @@ interface Attributes extends NamedNodeMap {
   'track-params'?: any
 }
 
-interface TrackBaseData {
-  eventTime: number // 埋点时间
-  triggerType: 'Click' | 'Visibility' // 事件类型
-  currentUrl?: string
-  fromUrl?: string
-}
+// interface TrackBaseData {
+//   eventTime: number // 埋点时间
+//   triggerType: 'Click' | 'Visibility' // 事件类型
+//   currentUrl?: string
+//   fromUrl?: string
+// }
 
 // interface TrackData {
 
 // }
-
-function getTrackDataFromElement(el: Element) {
-  const attributes: Attributes = el.attributes
-}
 
 const trackClickDirective: Directive = {
   mounted(el: Element) {
