@@ -96,9 +96,9 @@ export function dataUriToBlob(dataUrl: string) {
   return new Blob([ia], { type: mime })
 }
 
-export function download(url: string, fileName: string) {
-  //
-}
+// export function download(url: string, fileName: string) {
+//   //
+// }
 
 export function downloadBlob(blob: Blob, fileName: string) {
   const msSaveBlob = (window.navigator as any).msSaveBlob

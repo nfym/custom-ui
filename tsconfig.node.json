@@ -8,8 +8,6 @@
     "types": ["node"],
     // ↓node 脚本没有 dom 环境，因此只集成 esnext 库即可
     "lib": ["ESNext"],
-    // ↓指定了 TypeScript 解析模块导入的方式
-    "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true
   },
   "include": [

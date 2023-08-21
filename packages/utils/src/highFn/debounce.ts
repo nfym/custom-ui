@@ -13,7 +13,8 @@ export function debounce<T extends []>(fn: (...args: T) => void, delay = 60) {
     }
 
     timer = window.setTimeout(() => {
-      fn.apply(this, args)
+      // fn.apply(this, args)
+      fn(...args)
     }, delay)
   }
 }

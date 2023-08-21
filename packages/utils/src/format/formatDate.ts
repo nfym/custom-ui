@@ -22,6 +22,7 @@ function formatDate(time: number, format = 'YY-MM-DD hh:mm:ss') {
     sec = date.getSeconds()
   // eslint-disable-next-line prefer-spread
   const preArr = Array.apply(null, Array(10)).map(function (elem, index) {
+    console.log('🚀 ~ file: formatDate.ts:25 ~ preArr ~ elem:', elem)
     return '0' + index
   })
 

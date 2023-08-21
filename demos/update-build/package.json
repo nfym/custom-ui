@@ -1,0 +1,11 @@
+{
+  "name": "@custom-ui/update-build",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@plugin-web-update-notification/vite": "^1.6.4"
+  }
+}

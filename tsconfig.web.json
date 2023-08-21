@@ -12,6 +12,7 @@
   },
   "include": [
     "types",
+    "packages",
     "./example/src/**/*.{vue,js,ts,jsx,tsx}",
     "./demos/**/src/**/*.{vue,js,ts,jsx,tsx}"
   ]

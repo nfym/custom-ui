@@ -25,6 +25,7 @@
     // ↓是否启用所有严格类型检查选项。相当于启用
     // noImplicitAny, noImplicitThis, alwaysStrict，strictNullChecks, strictFunctionTypes,strictPropertyInitialization
     "strict": true,
+    // ↓设为 true 后对 bind、call 和 apply 绑定的方法的参数的检测是严格检测
     "strictBindCallApply": true,
     /* 额外的检查 */
     // ↓是否在有声明了但未使用的函数参数时报告错误。
