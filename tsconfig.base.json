@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    /* 基本选项 */
+    /* 语言和环境选项 */
     // ↓指定ECMAScript目标版本 "ES3"（默认）， "ES5"， "ES6"/ "ES2015"， "ES2016"， "ES2017"或 "ESNext" (最新版本)。
     "target": "es2022",
     // ↓编译过程中需要引入的库文件的列表。
@@ -23,23 +23,26 @@
     "isolatedModules": true,
 
     /* 严格的类型检查选项 */
-    // ↓是否启用所有严格类型检查选项。相当于启用
-    // noImplicitAny, noImplicitThis, alwaysStrict，strictNullChecks, strictFunctionTypes,strictPropertyInitialization
+
+    // ↓是否启用所有的严格类型检查选项。相当于启用
+    // noImplicitAny,
+    // noImplicitThis,
+    // alwaysStrict，
+    // strictNullChecks,
+    // strictFunctionTypes,
+    // strictPropertyInitialization,
+    // strictBindCallApply,
+    // useUnknownInCatchVaria
     "strict": true,
-    // ↓设为 true 后对 bind、call 和 apply 绑定的方法的参数的检测是严格检测
-    "strictBindCallApply": true,
+
     /* 额外的检查 */
-
-    // ↓是否在有声明了但未使用的函数参数时报告错误。
-    // "noUnusedParameters": false,
-
     // ↓是否在函数缺少返回语句时报告错误
     // "noImplicitReturns": false,
-
     // ↓用于检查 switch 中是否有 case 没有使用 break 跳出 switch
     "noFallthroughCasesInSwitch": true,
     // ↓检查 import xxx from 'fileName' 语句的文件名和实际文件名是否一致
     "forceConsistentCasingInFileNames": true,
+
     /* 模块解析选项 */
     // ↓指定了 TypeScript 解析模块导入的方式
     "moduleResolution": "Node",
@@ -57,6 +60,7 @@
     "esModuleInterop": true, // 支持合成模块的默认导入
     // 允许引入 .json 模块
     "resolveJsonModule": true,
+
     /* 编译输出选项 */
     "diagnostics": true, // 打印诊断信息
     // ↓是否生成编译后的 js 文件
@@ -76,7 +80,8 @@
     "sourceRoot": "./",
     // ↓指定是否将ts源代码嵌入到生成的 .js.map 源映射文件中
     "inlineSources": true,
-    /* 其他选项 */
+
+    /* 语言和环境选项 */
     // ↓用于指定是否启用实验性的装饰器特性
     "experimentalDecorators": true,
     // ↓为装饰器提供元数据的支持

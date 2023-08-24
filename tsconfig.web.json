@@ -10,5 +10,14 @@
     "useDefineForClassFields": true,
     "types": ["vite/client"]
   },
-  "include": ["packages", "types", "demos", "example"]
+  "include": [
+    "packages",
+    "types",
+    "**/types",
+    // "demos", 设置 demos 则包含文件夹内所有，比如 update-build 内则不需要设置 types /// <reference types="@plugin-web-update-notification/vite" />
+    "demos/**/src/**/*.ts",
+    "demos/**/src/**/*.vue",
+    "example/src/**/*.vue",
+    "example/src/**/*.ts"
+  ]
 }

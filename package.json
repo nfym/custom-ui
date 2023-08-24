@@ -6,7 +6,6 @@
     "cz": "czg",
     "dev": "node ./scripts/dev.js",
     "build": "node ./scripts/build.js",
-    "build:deplay": "pnpm -C example build",
     "preview": "node ./scripts/preview.js",
     "type:web": "vue-tsc -p tsconfig.web.json",
     "type:node": "tsc -p tsconfig.node.json",
