@@ -43,10 +43,12 @@
     // ↓与 esModuleInterop: true 配合允许从 commonjs 的依赖中直接按 import XX from 'xxx' 的方式导入 default 模块
     "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入。这并不影响代码的输出，仅为了类型检查
     "esModuleInterop": true, // 支持合成模块的默认导入
-    // 允许引入 .json 模块
+    // ↓允许引入 .json 模块
     "resolveJsonModule": true,
 
     /* 编译输出选项 */
+    // ↓指定编译产物的存放目录
+    "outDir": "dist-ts",
     // ↓只进行类型检查而不需要实际编译运行代码
     "noEmit": true,
 
