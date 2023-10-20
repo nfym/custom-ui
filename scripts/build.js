@@ -1,7 +1,7 @@
 import { execa } from 'execa'
 import inquirer from 'inquirer'
 
-const typeCheck = 'pnpm type:check && '
+const typeCheck = 'pnpm type:web && '
 
 const config = [
   {

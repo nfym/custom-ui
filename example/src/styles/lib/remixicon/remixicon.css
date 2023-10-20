@@ -1,0 +1,77 @@
+
+/*
+* https://remixicon.com
+* https://github.com/Remix-Design/RemixIcon
+* Copyright RemixIcon.com
+* Released under the Apache License Version 2.0
+*/
+
+@font-face {
+    font-family: "remixicon";
+    src: url('remixicon.eot?t=1665989908634'); /* IE9*/
+    src: url('remixicon.eot?t=1665989908634#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url("remixicon.woff2?t=1665989908634") format("woff2"),
+    url("remixicon.woff?t=1665989908634") format("woff"),
+    url('remixicon.ttf?t=1665989908634') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('remixicon.svg?t=1665989908634#remixicon') format('svg'); /* iOS 4.1- */
+    font-display: swap;
+}
+
+[class^="ri-"], [class*="ri-"] {
+    font-family: 'remixicon' !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ri-lg { font-size: 1.3333em; line-height: 0.75em; vertical-align: -.0667em; }
+.ri-xl { font-size: 1.5em; line-height: 0.6666em; vertical-align: -.075em; }
+.ri-xxs { font-size: .5em; }
+.ri-xs { font-size: .75em; }
+.ri-sm { font-size: .875em }
+.ri-1x { font-size: 1em; }
+.ri-2x { font-size: 2em; }
+.ri-3x { font-size: 3em; }
+.ri-4x { font-size: 4em; }
+.ri-5x { font-size: 5em; }
+.ri-6x { font-size: 6em; }
+.ri-7x { font-size: 7em; }
+.ri-8x { font-size: 8em; }
+.ri-9x { font-size: 9em; }
+.ri-10x { font-size: 10em; }
+.ri-fw { text-align: center; width: 1.25em; }
+
+.ri-sun-line:before { content: "\f1bf"; }
+.ri-moon-line:before { content: "\ef75"; }
+.ri-apps-line:before { content: "\ea44"; }
+.ri-menu-fold-line:before { content: "\ef3d"; }
+.ri-menu-unfold-line:before { content: "\ef40"; }
+.ri-information-fill:before { content: "\ee58"; }
+.ri-error-warning-fill:before { content: "\eca0"; }
+.ri-question-fill:before { content: "\f044"; }
+.ri-add-box-line:before { content: "\ea0f"; }
+.ri-translate-2:before { content: "\f226"; }
+.ri-translate:before { content: "\f227"; }
+.ri-smartphone-line:before { content: "\f15a"; }
+.ri-wechat-fill:before { content: "\f2b5"; }
+.ri-reply-line:before { content: "\f07a"; }
+.ri-slideshow-line:before { content: "\f158"; }
+.ri-slideshow-fill:before { content: "\f157"; }
+.ri-layout-3-line:before { content: "\ee81"; }
+.ri-layout-3-fill:before { content: "\ee80"; }
+.ri-safe-fill:before { content: "\f0aa"; }
+.ri-safe-line:before { content: "\f0ab"; }
+.ri-bilibili-fill:before { content: "\eabf"; }
+.ri-bilibili-line:before { content: "\eac0"; }
+.ri-space-ship-line:before { content: "\f166"; }
+.ri-rocket-line:before { content: "\f096"; }
+.ri-add-box-fill:before { content: "\ea0e"; }
+.ri-add-circle-line:before { content: "\ea11"; }
+.ri-add-circle-fill:before { content: "\ea10"; }
+.ri-close-circle-line:before { content: "\eb97"; }
+.ri-close-circle-fill:before { content: "\eb96"; }
+.ri-close-line:before { content: "\eb99"; }
+.ri-alarm-warning-fill:before { content: "\ea1c"; }
+.ri-alarm-warning-line:before { content: "\ea1d"; }
+.ri-logout-circle-r-line:before { content: "\eede"; }
+.ri-logout-box-r-line:before { content: "\eeda"; }

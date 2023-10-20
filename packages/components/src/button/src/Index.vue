@@ -5,14 +5,13 @@
 </template>
 
 <script setup lang="ts">
+defineOptions({ name: 'UiButton' })
+
 import { ref } from 'vue'
-
-import { test } from '@custom-ui/utils'
-
 const prefixCls = ref('ui-button')
 
 function clickHandler() {
-  test()
+  //
 }
 </script>
 

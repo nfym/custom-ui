@@ -31,6 +31,12 @@ const config = [
     packageName: '@demos/gsap',
     port: 4030,
     command: 'pnpm -C demos/update-build dev'
+  },
+  {
+    name: 'try-axios',
+    packageName: '@demos/try-axios',
+    port: 4040,
+    command: 'pnpm -C demos/try-axios dev'
   }
 ]
 

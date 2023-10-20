@@ -1,13 +1,15 @@
 <template>
-  <h1>随便看看</h1>
-  <UiButton>btn</UiButton>
-  <TestComp></TestComp>
+  <router-view v-if="isRouterAlive" />
 </template>
 
 <script setup lang="ts">
-import { test } from '@custom-ui/utils'
-import { UiButton } from '@custom-ui/components'
-import TestComp from '@/components/TestComp.vue'
+defineOptions({ name: 'App' })
 
-test()
+import * as Util from '@custom-ui/utils'
+import * as Components from '@custom-ui/components'
+import { useReload } from '@custom-ui/hooks'
+
+console.log('🚀 ~ packages/utils:', Util)
+console.log('🚀 ~ packages/components:', Components)
+const { isRouterAlive } = useReload()
 </script>

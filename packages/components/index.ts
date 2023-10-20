@@ -1,1 +1,2 @@
-export * from './button'
+export * from './src/button'
+export * from './src/scrollbar'

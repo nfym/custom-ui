@@ -12,7 +12,6 @@
       "require": "./dist/customui-util.umd.cjs"
     }
   },
-  "license": "ISC",
   "scripts": {
     "build": "vite build"
   }

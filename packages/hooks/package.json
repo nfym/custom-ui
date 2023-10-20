@@ -1,0 +1,6 @@
+{
+  "name": "@custom-ui/hooks",
+  "private": true,
+  "main": "index.ts",
+  "license": "ISC"
+}
