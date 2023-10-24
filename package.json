@@ -7,7 +7,7 @@
     "dev": "node ./scripts/dev.js",
     "build": "node ./scripts/build.js",
     "preview": "node ./scripts/preview.js",
-    "deplay": "gh-pages -d example/dist",
+    "deplay": "pnpm -C example build && gh-pages -d example/dist",
     "type:web": "vue-tsc -p tsconfig.web.json",
     "type:node": "tsc -p tsconfig.node.json",
     "lint:eslint": "eslint \"**/*.{vue,js,ts,jsx,tsx}\" --max-warnings 10 --cache --fix --cache-location node_modules/.cache/eslint/.eslintcache",

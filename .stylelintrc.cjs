@@ -4,11 +4,17 @@ module.exports = {
     'stylelint-config-standard',
     'stylelint-config-html/html',
     'stylelint-config-html/vue',
-    // 'stylelint-config-prettier',
     'stylelint-config-rational-order'
   ],
   customSyntax: 'postcss-less',
-  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts'],
+  ignoreFiles: [
+    '**/styles/lib/*',
+    '**/*.js',
+    '**/*.jsx',
+    '**/*.tsx',
+    '**/*.ts',
+    '**/*.yaml'
+  ],
   rules: {
     'function-no-unknown': null,
     'selector-class-pattern': null,

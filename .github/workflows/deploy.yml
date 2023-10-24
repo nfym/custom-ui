@@ -29,14 +29,26 @@ jobs:
     # 指定虚拟机环境
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+
     steps:
       - name: Checkout
         # 拉取 GitHub 仓库代码
         uses: actions/checkout@v3
-      - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v2.1.0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
         with:
-          version: 8.6.2
+          version: 8
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        # 设定 Node.js 环境
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
 
       - name: Install
         # 安装依赖
@@ -44,17 +56,4 @@ jobs:
 
       - name: Build
         # 打包
-        run: pnpm run build:deploy
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload dist repository
-          path: './example/dist'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+        run: pnpm deploy
