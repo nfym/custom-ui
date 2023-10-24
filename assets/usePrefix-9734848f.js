@@ -1,1 +1,0 @@
-import{k as e,u as s}from"./index-6b5316ae.js";const r=(e,s,r,t)=>{let n=e?`${e}-${s}`:s;return r&&(n+=`__${r}`),t&&(n+=`--${t}`),n},t=t=>{const n=e((()=>""));return{namespace:n,b:()=>r(s(n),t,"",""),be:e=>e?r(s(n),t,e,""):"",bm:e=>r(s(n),t,"",e),bem:(e,a)=>r(s(n),t,e,a),is:e=>e?`is-${e}`:""}};export{t as u};
