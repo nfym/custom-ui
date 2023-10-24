@@ -27,7 +27,7 @@ export default defineComponent({
       prefixCls,
       getImageUrl,
       backHome: () => {
-        switchPage({ name: 'DataManage' })
+        switchPage({ name: 'Home' })
       },
       imgIndex,
       setImgIndex
@@ -49,7 +49,7 @@ export default defineComponent({
         <span>抱歉，您访问的页面不存在！</span>
         <br />
         <span>访问链接可能错误，或者该页面已被删除。</span>
-        <a-button type="link" @click="backHome">前往xx模块</a-button>
+        <a-button type="link" @click="backHome">前往首页</a-button>
       </div>
     </div>
   </section>

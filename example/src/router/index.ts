@@ -5,11 +5,14 @@
  */
 import { createRouter, createWebHistory } from 'vue-router'
 import { basicRoutes, modulesRoutes } from './routes'
+import { DEPLOY_BASE_URL } from '../../build/constant'
 import type { App } from 'vue'
+
+const base = import.meta.env.MODE === 'production' ? DEPLOY_BASE_URL : '/'
 
 // 创建一个可以被 Vue 应用程序使用的路由实例
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(base),
   // 应该添加到路由器的初始路由列表。
   routes: [...basicRoutes, ...modulesRoutes]
   // 是否应该禁止尾部斜杠。默认 false

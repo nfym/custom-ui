@@ -4,6 +4,9 @@
 *.jpg
 *.woff
 
+# 引入的第三方样式文件
+**/styles/lib/*
+
 # 测试和打包目录
 /test/*
 dist
