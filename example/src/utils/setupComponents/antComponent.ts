@@ -4,7 +4,16 @@
  * @LastEditTime: 2023-09-11 18:20:12
  */
 import type { App } from 'vue'
-import { Button, Menu, Dropdown, Space, Row, Form, Input } from 'ant-design-vue'
+import {
+  Button,
+  Menu,
+  Dropdown,
+  Space,
+  Row,
+  Col,
+  Form,
+  Input
+} from 'ant-design-vue'
 
 export default function setupAntComponent(app: App) {
   app.use(Button)
@@ -14,4 +23,5 @@ export default function setupAntComponent(app: App) {
   app.use(Dropdown)
   app.use(Space)
   app.use(Row)
+  app.use(Col)
 }
