@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [vue()],
-    base: DEPLOY_BASE_URL,
+    base: mode === 'development' ? '/' : DEPLOY_BASE_URL,
     root: './', // 默认的 process.cwd() 获取到当前工作目录 custom-ui
     resolve: {
       // 路径别名
