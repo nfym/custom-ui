@@ -57,17 +57,21 @@ const menus = routes.filter(
 // 计算当前导航项
 const current = computed({
   get: () => {
+    // 系统异常页面
+    if (router.currentRoute.value.name === 'Error') {
+      return []
+    }
+
     // 获取路由一级路径
     const path = regExpPath.exec(router.currentRoute.value.path)
-
-    if (!path) return [router.currentRoute.value.name]
+    if (!path) return []
 
     const currentMenu = menus.find((item) => item.path === path[0])
     if (!currentMenu) {
       return [router.currentRoute.value.name]
     }
 
-    // 路由模块下的所有子路由都不添加为子菜单
+    // 路由模块下的所有子路由都不添加为子菜单,直接返回父路由菜单name
     if (currentMenu.meta.hideChildrenInMenu) {
       return [currentMenu.name]
     }
@@ -77,8 +81,8 @@ const current = computed({
       return [router.currentRoute.value.name]
     }
 
-    // 模块下的的其他非子菜单页面
-    return [router.currentRoute.value.meta.subMenuItemName]
+    // 模块下的的其他非子菜单页面, 返回父路由菜单name
+    return [router.currentRoute.value.matched[0].name]
   },
   set: () => {
     //
