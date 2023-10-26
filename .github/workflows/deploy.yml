@@ -59,7 +59,7 @@ jobs:
 
       - name: Build
         # 打包
-        run: pnpm build
+        run: pnpm -C example build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
