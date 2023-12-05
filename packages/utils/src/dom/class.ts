@@ -1,5 +1,5 @@
 const rclass = /[\t\r\n\f]/g
-// const rnotwhite = /\S+/g
+const rnotwhite = /\S+/g
 
 const fillSpaces = (str: string) => ` ${str} `
 
@@ -20,91 +20,91 @@ export function hasClass(elem: Element | null, selector: string | null) {
     : false
 }
 
-// export function addClass(
-//   elem: Element | null,
-//   selector: ((cls: string) => string) | string | null
-// ): void {
-//   if (elem == null || selector == null) {
-//     return
-//   }
+export function addClass(
+  elem: Element | null,
+  selector: ((cls: string) => string) | string | null
+): void {
+  if (elem == null || selector == null) {
+    return
+  }
 
-//   if (typeof selector === 'function') {
-//     return addClass(elem, selector(getClass(elem)))
-//   }
+  if (typeof selector === 'function') {
+    return addClass(elem, selector(getClass(elem)))
+  }
 
-//   if (typeof selector === 'string' && elem.nodeType === 1) {
-//     const classes = selector.match(rnotwhite) || []
-//     const oldValue = fillSpaces(getClass(elem)).replace(rclass, ' ')
-//     let newValue = classes.reduce((memo, cls) => {
-//       if (memo.indexOf(fillSpaces(cls)) < 0) {
-//         return `${memo}${cls} `
-//       }
-//       return memo
-//     }, oldValue)
+  if (typeof selector === 'string' && elem.nodeType === 1) {
+    const classes = selector.match(rnotwhite) || []
+    const oldValue = fillSpaces(getClass(elem)).replace(rclass, ' ')
+    let newValue = classes.reduce((memo, cls) => {
+      if (memo.indexOf(fillSpaces(cls)) < 0) {
+        return `${memo}${cls} `
+      }
+      return memo
+    }, oldValue)
 
-//     newValue = newValue.trim()
+    newValue = newValue.trim()
 
-//     if (oldValue !== newValue) {
-//       elem.setAttribute('class', newValue)
-//     }
-//   }
-// }
+    if (oldValue !== newValue) {
+      elem.setAttribute('class', newValue)
+    }
+  }
+}
 
-// export function removeClass(
-//   elem: Element | null,
-//   selector?: ((cls: string) => string) | string | null
-// ): void {
-//   if (elem == null) {
-//     return
-//   }
+export function removeClass(
+  elem: Element | null,
+  selector?: ((cls: string) => string) | string | null
+): void {
+  if (elem == null) {
+    return
+  }
 
-//   if (typeof selector === 'function') {
-//     return removeClass(elem, selector(getClass(elem)))
-//   }
+  if (typeof selector === 'function') {
+    return removeClass(elem, selector(getClass(elem)))
+  }
 
-//   if ((!selector || typeof selector === 'string') && elem.nodeType === 1) {
-//     const classes = (selector || '').match(rnotwhite) || []
-//     const oldValue = fillSpaces(getClass(elem)).replace(rclass, ' ')
-//     let newValue = classes.reduce((memo, cls) => {
-//       const className = fillSpaces(cls)
-//       if (memo.indexOf(className) > -1) {
-//         return memo.replace(className, ' ')
-//       }
+  if ((!selector || typeof selector === 'string') && elem.nodeType === 1) {
+    const classes = (selector || '').match(rnotwhite) || []
+    const oldValue = fillSpaces(getClass(elem)).replace(rclass, ' ')
+    let newValue = classes.reduce((memo, cls) => {
+      const className = fillSpaces(cls)
+      if (memo.indexOf(className) > -1) {
+        return memo.replace(className, ' ')
+      }
 
-//       return memo
-//     }, oldValue)
+      return memo
+    }, oldValue)
 
-//     newValue = selector ? newValue.trim() : ''
+    newValue = selector ? newValue.trim() : ''
 
-//     if (oldValue !== newValue) {
-//       elem.setAttribute('class', newValue)
-//     }
-//   }
-// }
+    if (oldValue !== newValue) {
+      elem.setAttribute('class', newValue)
+    }
+  }
+}
 
-// export function toggleClass(
-//   elem: Element | null,
-//   selector: ((cls: string, state?: boolean) => string) | string | null,
-//   stateVal?: boolean
-// ): void {
-//   if (elem == null || selector == null) {
-//     return
-//   }
+export function toggleClass(
+  elem: Element | null,
+  selector: ((cls: string, state?: boolean) => string) | string | null,
+  stateVal?: boolean
+): void {
+  if (elem == null || selector == null) {
+    return
+  }
 
-//   if (stateVal != null && typeof selector === 'string') {
-//     stateVal ? addClass(elem, selector) : removeClass(elem, selector)
+  if (stateVal != null && typeof selector === 'string') {
+    stateVal ? addClass(elem, selector) : removeClass(elem, selector)
 
-//     return
-//   }
+    return
+  }
 
-//   if (typeof selector === 'function') {
-//     return toggleClass(elem, selector(getClass(elem), stateVal), stateVal)
-//   }
+  if (typeof selector === 'function') {
+    return toggleClass(elem, selector(getClass(elem), stateVal), stateVal)
+  }
 
-//   if (typeof selector === 'string') {
-//     const metches = selector.match(rnotwhite) || []
-//     metches.forEach((cls) => {
-//       hasClass(elem, cls) ? removeClass(elem, cls) : addClass(elem, cls)
-//     })
-//   }
-// }
+  if (typeof selector === 'string') {
+    const metches = selector.match(rnotwhite) || []
+    metches.forEach((cls) => {
+      hasClass(elem, cls) ? removeClass(elem, cls) : addClass(elem, cls)
+    })
+  }
+}
