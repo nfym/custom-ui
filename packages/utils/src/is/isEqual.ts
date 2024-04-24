@@ -2,7 +2,7 @@ import { isString } from './string'
 import { isObjectLike } from './object'
 import { isArrayLike } from './array'
 /**
- * @Description: 两个数据是否相同
+ *  两个数据是否相同
  * @param {any} value
  * @param {any} other
  */
@@ -48,9 +48,9 @@ export function isEqual(value: any, other: any): boolean {
 }
 
 /**
- * @Description: 两个数据是否相同,不依赖其他函数，来自https://www.30secondsofcode.org/js/s/equals/
+ *  两个数据是否相同,不依赖其他函数，来自https://www.30secondsofcode.org/js/s/equals/
  */
-export const equals = (a: any, b: any): boolean => {
+export function equals(a: any, b: any): boolean {
   if (a === b) return true
 
   if (a instanceof Date && b instanceof Date) return a.getTime() === b.getTime()

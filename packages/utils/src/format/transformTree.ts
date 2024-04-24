@@ -2,7 +2,6 @@
  * 将扁平数组转换成树结构
  * @param list 扁平数组
  * @param options 树解析map
- * @returns
  */
 function transformTree(
   list: any[] = [],

@@ -3,7 +3,7 @@ const rnotwhite = /\S+/g
 
 const fillSpaces = (str: string) => ` ${str} `
 
-export function getClass(elem: Element) {
+export function getClass(elem: Element): string {
   return (elem && elem.getAttribute && elem.getAttribute('class')) || ''
 }
 
@@ -35,7 +35,7 @@ export function addClass(
   if (typeof selector === 'string' && elem.nodeType === 1) {
     const classes = selector.match(rnotwhite) || []
     const oldValue = fillSpaces(getClass(elem)).replace(rclass, ' ')
-    let newValue = classes.reduce((memo, cls) => {
+    let newValue = [...classes].reduce((memo: string, cls: string) => {
       if (memo.indexOf(fillSpaces(cls)) < 0) {
         return `${memo}${cls} `
       }
@@ -65,7 +65,7 @@ export function removeClass(
   if ((!selector || typeof selector === 'string') && elem.nodeType === 1) {
     const classes = (selector || '').match(rnotwhite) || []
     const oldValue = fillSpaces(getClass(elem)).replace(rclass, ' ')
-    let newValue = classes.reduce((memo, cls) => {
+    let newValue = [...classes].reduce((memo: string, cls: string) => {
       const className = fillSpaces(cls)
       if (memo.indexOf(className) > -1) {
         return memo.replace(className, ' ')

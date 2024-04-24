@@ -1,73 +1,75 @@
-// import { isDataUrl } from '../is/bom'
+import { isDataUrl } from '../is/bom'
 
 /**
  * Converts an image at `url` to base64-encoded data uri.
- * The mime type of the image is inferred from the `url` file extension.
  */
-// export function imageToDataUri(
-//   url: string,
-//   callback: (err: Error | null, dataUri?: string) => any
-// ) {
-//   // No need to convert to data uri if it is already in data uri.
-//   if (!url || isDataUrl(url)) {
-//     // Keep the async nature of the function.
-//     setTimeout(() => callback(null, url))
-//     return
-//   }
+export function imageToDataUri(
+  url: string,
+  callback: (err: Error | null, dataUri?: string) => any
+) {
+  // No need to convert to data uri if it is already in data uri.
+  if (!url || isDataUrl(url)) {
+    // Keep the async nature of the function.
+    setTimeout(() => callback(null, url))
+    return
+  }
 
-//   const onError = () => {
-//     callback(new Error(`Failed to load image: ${url}`))
-//   }
+  const onError = () => {
+    callback(new Error(`Failed to load image: ${url}`))
+  }
 
-//   const onLoad = window.FileReader
-//     ? // chrome, IE10+
-//       (xhr: XMLHttpRequest) => {
-//         if (xhr.status === 200) {
-//           const reader = new FileReader()
-//           reader.onload = (evt) => {
-//             const dataUri = evt.target!.result as string
-//             callback(null, dataUri)
-//           }
+  const onLoad = window.FileReader
+    ? // chrome, IE10+
+      (xhr: XMLHttpRequest) => {
+        if (xhr.status === 200) {
+          const reader = new FileReader()
+          reader.onload = (evt) => {
+            const dataUri = evt.target!.result as string
+            callback(null, dataUri)
+          }
 
-//           reader.onerror = onError
-//           reader.readAsDataURL(xhr.response)
-//         } else {
-//           onError()
-//         }
-//       }
-//     : (xhr: XMLHttpRequest) => {
-//         const toString = (u8a: Uint8Array) => {
-//           const CHUNK_SZ = 0x8000
-//           const c: string[] = []
-//           for (let i = 0; i < u8a.length; i += CHUNK_SZ) {
-//             c.push(
-//               String.fromCharCode.apply(null, u8a.subarray(i, i + CHUNK_SZ))
-//             )
-//           }
-//           return c.join('')
-//         }
+          reader.onerror = onError
+          reader.readAsDataURL(xhr.response)
+        } else {
+          onError()
+        }
+      }
+    : (xhr: XMLHttpRequest) => {
+        const toString = (u8a: Uint8Array) => {
+          const CHUNK_SZ = 0x8000
+          const c: string[] = []
+          for (let i = 0; i < u8a.length; i += CHUNK_SZ) {
+            c.push(
+              String.fromCharCode.apply(
+                null,
+                u8a.subarray(i, i + CHUNK_SZ) as unknown as number[]
+              )
+            )
+          }
+          return c.join('')
+        }
 
-//         if (xhr.status === 200) {
-//           let suffix = url.split('.').pop() || 'png'
-//           if (suffix === 'svg') {
-//             suffix = 'svg+xml'
-//           }
-//           const meta = `data:image/${suffix};base64,`
-//           const bytes = new Uint8Array(xhr.response)
-//           const base64 = meta + btoa(toString(bytes))
-//           callback(null, base64)
-//         } else {
-//           onError()
-//         }
-//       }
+        if (xhr.status === 200) {
+          let suffix = url.split('.').pop() || 'png'
+          if (suffix === 'svg') {
+            suffix = 'svg+xml'
+          }
+          const meta = `data:image/${suffix};base64,`
+          const bytes = new Uint8Array(xhr.response)
+          const base64 = meta + btoa(toString(bytes))
+          callback(null, base64)
+        } else {
+          onError()
+        }
+      }
 
-//   const xhr = new XMLHttpRequest()
-//   xhr.responseType = window.FileReader ? 'blob' : 'arraybuffer'
-//   xhr.open('GET', url, true)
-//   xhr.addEventListener('error', onError)
-//   xhr.addEventListener('load', () => onLoad(xhr))
-//   xhr.send()
-// }
+  const xhr = new XMLHttpRequest()
+  xhr.responseType = window.FileReader ? 'blob' : 'arraybuffer'
+  xhr.open('GET', url, true)
+  xhr.addEventListener('error', onError)
+  xhr.addEventListener('load', () => onLoad(xhr))
+  xhr.send()
+}
 
 export function dataUriToBlob(dataUrl: string) {
   let uri = dataUrl.replace(/\s/g, '')
@@ -95,10 +97,6 @@ export function dataUriToBlob(dataUrl: string) {
 
   return new Blob([ia], { type: mime })
 }
-
-// export function download(url: string, fileName: string) {
-//   //
-// }
 
 export function downloadBlob(blob: Blob, fileName: string) {
   const msSaveBlob = (window.navigator as any).msSaveBlob
@@ -134,7 +132,7 @@ export function downloadDataUri(dataUrl: string, fileName: string) {
   downloadBlob(blob, fileName)
 }
 
-export function getNumber(str: string) {
+export function strToNum(str: string) {
   const ret = parseFloat(str)
   return Number.isNaN(ret) ? null : ret
 }
@@ -161,7 +159,7 @@ export function svgToDataUrl(
       viewBox = parseViewBox(svg)
     }
     if (viewBox != null) {
-      return getNumber(viewBox[index])
+      return strToNum(viewBox[index])
     }
     return null
   }
@@ -169,7 +167,7 @@ export function svgToDataUrl(
   const getNumberFromMatches = (reg: RegExp) => {
     const matches = svg.match(reg)
     if (matches && matches[2]) {
-      return getNumber(matches[2])
+      return strToNum(matches[2])
     }
     return null
   }

@@ -13,6 +13,7 @@
     }
   },
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "publish": "npx jsr publish --allow-dirty"
   }
 }

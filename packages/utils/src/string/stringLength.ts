@@ -1,5 +1,5 @@
 /**
- * @description 存在 Unicode 码点大于0xFFFF的字符时， 使用 for of 获取字符数
+ *  存在 Unicode 码点大于0xFFFF的字符时， 使用 for of 获取字符数
  * @param str
  * @return {number}
  */

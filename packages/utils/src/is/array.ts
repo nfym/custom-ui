@@ -1,12 +1,12 @@
 /**
- * @description 是否 Array
+ *  是否 Array
  */
 export function isArray(value: any): value is Array<any> {
   return value && Array.isArray(value)
 }
 
 /**
- * @description 是否类数组结构
+ *  是否类数组结构
  * @demo isArrayLike([1, 2, 3]) => true
  * @demo isArrayLike(document.body.children) => true
  * @demo isArrayLike('abc') => true

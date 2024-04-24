@@ -3,7 +3,7 @@ const judgeIsNumber = (value: any) =>
   typeof value === 'number' && !isNaN(value) && Math.abs(value) !== Infinity
 
 /**
- * @description 将值转换为百分数
+ *  将值转换为百分数
  * @param value 任何值
  * @param precision 小数位
  */

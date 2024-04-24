@@ -1,4 +1,4 @@
-function readImg(file: File) {
+export function readImg(file: File) {
   /**
    file2img(file).then((img) => console.log(img));
    */
@@ -20,5 +20,3 @@ function readImg(file: File) {
     }
   })
 }
-
-export default readImg

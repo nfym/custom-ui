@@ -1,7 +1,7 @@
 /**
  * 获取选中的文本
- * @returns
  */
-const getSelection = () => (window as any).getSelection().toString()
-
-export default getSelection
+export function getSelection(): string {
+  const select = window.getSelection() || ''
+  return select.toString()
+}

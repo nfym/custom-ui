@@ -1,21 +1,22 @@
 /**
- *
+ * 节流
  * @param fn
  * @param delay
- * @returns
  */
-// eslint-disable-next-line @typescript-eslint/ban-types
-function throttle(fn: Function, delay: number) {
+export function throttle<T extends []>(
+  fn: (...args: T) => void,
+  delay = 60
+): (...args: any) => void {
   let flag = true
+
   return (...args: any) => {
     if (flag) {
       flag = false
       fn(...args)
+
       setTimeout(() => {
         flag = true
       }, delay)
     }
   }
 }
-
-export default throttle

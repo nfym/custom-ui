@@ -1,4 +1,4 @@
-import isType from './isType'
+import { isType } from './isType'
 import { getTagName } from '../dom/element'
 
 export function isWindow(value: any): value is Window {

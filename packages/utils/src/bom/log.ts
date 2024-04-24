@@ -38,9 +38,12 @@ const capsuleLogStyle = (
   )
 }
 /**
- * logTag : log 胶囊样式
+ * logN : log 胶囊样式
  */
-export const logN = createLog(capsuleLogStyle)
+export const logN: Record<
+  Color,
+  (ns: string, msg: string, ...args: any[]) => void
+> = createLog(capsuleLogStyle)
 
 const tagLogStyle = (type: Color, msg: string, ...args: any[]) => {
   const color = getColor(type)
@@ -53,7 +56,8 @@ const tagLogStyle = (type: Color, msg: string, ...args: any[]) => {
 /**
  * logTag : log 标签样式
  */
-export const logT = createLog(tagLogStyle)
+export const logT: Record<Color, (msg: string, ...args: any[]) => void> =
+  createLog(tagLogStyle)
 
 const colorLogStyle = (type: Color, msg: string, ...args: any[]) => {
   const color = getColor(type)
@@ -66,4 +70,5 @@ const colorLogStyle = (type: Color, msg: string, ...args: any[]) => {
 /**
  * logColor : log 文本添加颜色
  */
-export const logC = createLog(colorLogStyle)
+export const logC: Record<Color, (msg: string, ...args: any[]) => void> =
+  createLog(colorLogStyle)

@@ -1,4 +1,4 @@
-import isType from './isType'
+import { isType } from './isType'
 import { isFunction } from './function'
 
 export interface ObjectType<T> {
@@ -6,11 +6,14 @@ export interface ObjectType<T> {
 }
 
 /**
- * @description:是否对象类型，包括object、array、function, 剔除了 null
- * @demo isObject({}) => true
- * @demo isObject([1, 2, 3]) => true
- * @demo isObject(Function) => true
- * @demo isObject(null) => false
+ * 是否对象类型，包括object、array、function, 剔除了 null
+ *
+ * ```ts
+ * // isObject({}) => true
+ * // isObject([1, 2, 3]) => true
+ * // isObject(Function) => true
+ * // isObject(null) => false
+ * ```
  */
 export function isObject<T = any>(value: any): value is T {
   const type = typeof value
@@ -18,22 +21,28 @@ export function isObject<T = any>(value: any): value is T {
 }
 
 /**
- * @description: 是否对象类型，包括object、array, 剔除了 null 和 function
- * @demo isObjectLike({}) => true
- * @demo isObjectLike([1, 2, 3]) => true
- * @demo isObjectLike(Function) => false
- * @demo isObjectLike(null) => false
+ *  是否对象类型，包括object、array, 剔除了 null 和 function
+ *
+ * ```ts
+ * // isObjectLike({}) => true
+ * // isObjectLike([1, 2, 3]) => true
+ * // isObjectLike(Function) => false
+ * // isObjectLike(null) => false
+ * ```
  */
 export function isObjectLike(value: any): value is ObjectType<any> {
   return value !== null && typeof value === 'object'
 }
 
 /**
- * @description: 是否对象类型，包括object, 剔除了array、 null 和 function
- * @demo isObjectLike({}) => true
- * @demo isObjectLike([1, 2, 3]) => false
- * @demo isObjectLike(Function) => false
- * @demo isObjectLike(null) => false
+ *  是否对象类型，包括object, 剔除了array、 null 和 function
+ *
+ * ```ts
+ * // isObjectLike({}) => true
+ * // isObjectLike([1, 2, 3]) => false
+ * // isObjectLike(Function) => false
+ * // isObjectLike(null) => false
+ * ```
  */
 export function isObjectOnly(value: any): value is ObjectType<any> {
   return value !== null && isType(value, 'Object')

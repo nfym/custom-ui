@@ -1,9 +1,13 @@
 /**
  * base64编码和解码
- * @param str
- * @returns
  */
-const base64 = {
+export const base64: {
+  _keyStr: string
+  encode: (e: string) => string
+  decode: (e: string) => string
+  _utf8_encode: (e: string) => string
+  _utf8_decode: (e: string) => string
+} = {
   _keyStr: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',
   encode: function (e: string) {
     let t = ''
@@ -111,5 +115,3 @@ const base64 = {
     return t
   }
 }
-
-export default base64

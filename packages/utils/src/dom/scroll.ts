@@ -22,13 +22,12 @@ export function setScrollTop(value: number) {
 const requestAnimFrame = (function () {
   return (
     window.requestAnimationFrame ||
-    // window.webkitRequestAnimationFrame ||
-    // window.mozRequestAnimationFrame ||
     function (callback) {
       window.setTimeout(callback, 1000 / 60)
     }
   )
 })()
+
 /**
  *
  * @desc  在${duration}时间内，滚动条平滑滚动到${to}指定位置

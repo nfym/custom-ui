@@ -1,11 +1,11 @@
-import isType from './isType'
+import { isType } from './isType'
 
-export function isFunction(value: unknown) {
+export function isFunction(value: unknown): boolean {
   return typeof value === 'function'
 }
 
 /**
- * @description 检查 value 是否是一个类 arguments 对象
+ *  检查 value 是否是一个类 arguments 对象
  * @demo isArguments(function() { return arguments; }());
  */
 export function isArguments(value: any): boolean {

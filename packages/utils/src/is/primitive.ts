@@ -1,4 +1,4 @@
-import isType from './isType'
+import { isType } from './isType'
 
 export function isNull(value: unknown): value is null {
   return value === null
@@ -16,7 +16,7 @@ export function isUnDef<T = unknown>(value?: T): value is T {
   return value === undefined
 }
 /**
- *  @description 检查 value 是否是 null 或者 undefined
+ *   检查 value 是否是 null 或者 undefined
  */
 export function isNil(value: any): value is null | undefined {
   /**
@@ -27,7 +27,7 @@ export function isNil(value: any): value is null | undefined {
 }
 
 /**
- * 已经定义（非 undefined ），且非 null
+ *   已经定义（非 undefined ），且非 null
  */
 export function isDefAndUnNull(val: unknown): val is null | undefined {
   return isDef(val) && isUnNull(val)
@@ -38,11 +38,11 @@ export function isBoolean(value: unknown): value is boolean {
 }
 
 /**
- * 是否为 Number、String、symbol、boolean、null、undefined 等原始数据类型
+ *  是否为 Number、String、symbol、boolean、null、undefined 等原始数据类型
  * @param value unknown
  * @return boolean
  */
-export function isPrimitive(value: unknown) {
+export function isPrimitive(value: unknown): boolean {
   return (
     value === null ||
     value === undefined ||

@@ -1,11 +1,11 @@
-export { default as average } from './average'
-export { default as clamp } from './clamp'
+export { average } from './average'
+export { clamp } from './clamp'
 
-export function mod(n: number, m: number) {
+export function mod(n: number, m: number): number {
   return ((n % m) + m) % m
 }
 
-export function random(lower: number, upper: number) {
+export function random(lower: number, upper: number): number {
   if (upper == null) {
     upper = lower == null ? 1 : lower
     lower = 0

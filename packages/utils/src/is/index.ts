@@ -1,6 +1,6 @@
-export { default as getType } from './getType'
-export { default as isType } from './isType'
-export { default as isEmpty } from './isEmpty'
+export { getType } from './getType'
+export { isType } from './isType'
+export { isEmpty } from './isEmpty'
 export { isEqual, equals } from './isEqual'
 
 export {

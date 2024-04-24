@@ -1,5 +1,5 @@
 /**
- * @description 时间格式化
+ *  时间格式化
  * @param time
  * @param format
  * @demo

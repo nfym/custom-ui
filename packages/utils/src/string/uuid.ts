@@ -1,5 +1,5 @@
 /**
- * @description 生成随机id
+ *  生成随机id
  */
 export function uuid() {
   let res = ''

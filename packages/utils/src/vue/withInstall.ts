@@ -1,6 +1,6 @@
 import type { App } from 'vue'
 
-const withInstall = (comp: any) => {
+export const withInstall = (comp: any): void => {
   comp.install = (app: App) => {
     // 注册组件
     app.component(comp.name, comp)
@@ -8,5 +8,3 @@ const withInstall = (comp: any) => {
 
   return comp
 }
-
-export default withInstall

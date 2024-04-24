@@ -1,30 +1,29 @@
-import isType from './isType'
+import { isType } from './isType'
 /**
- * @description 判断是不是 String
+ *  判断是不是 String
  */
 export function isString(value: unknown): value is string {
   return isType(value, 'String')
 }
 
 /**
- * @description 判断是不是数字型的字符串
- * @ 例子
- * @ isIntegerKey('a'); // false
- * @ isIntegerKey('0'); // true
- * @ isIntegerKey('011'); // false
- * @ isIntegerKey('11'); // true
- * @ isIntegerKey('-11'); // false
- * @ isIntegerKey(11); // false
- * @ isIntegerKey('NaN'); // false
+ *  判断是不是数字型的字符串
+ * @demo isIntegerKey('a'); // false
+ * @demo isIntegerKey('0'); // true
+ * @demo isIntegerKey('011'); // false
+ * @demo isIntegerKey('11'); // true
+ * @demo isIntegerKey('-11'); // false
+ * @demo isIntegerKey(11); // false
+ * @demo isIntegerKey('NaN'); // false
  */
-export const isIntegerKey = (key: string) =>
+export const isIntegerKey = (key: string): boolean =>
   isString(key) &&
   key !== 'NaN' &&
   key[0] !== '-' &&
   '' + parseInt(key, 10) === key
 
 /**
- * @description 判断是不是数字型的字符串
+ *  判断是不是数字型的字符串
  * @ 例子
  */
 export function isPercentage(val: any): val is string {

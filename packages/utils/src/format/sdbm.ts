@@ -14,5 +14,3 @@ const sdbm = (str: string) => {
 
 sdbm('name') // -3521204949
 console.log('🚀 ~ file: sdbm.js:15 ~ ', sdbm('hgfgfgfhgf'))
-
-// 输入 uuid 是否可以得到 number 类型的 uuid

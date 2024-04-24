@@ -1,10 +1,8 @@
 /**
- * 获取数据原始类型
+ *  获取数据原始类型
  * @param value
- * @returns
+ * @return string
  */
-function getRawType(value: unknown) {
+export function getType(value: unknown): string {
   return Object.prototype.toString.call(value).slice(8, -1)
 }
-
-export default getRawType
