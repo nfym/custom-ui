@@ -1,7 +1,9 @@
-export function readImg(file: File) {
-  /**
-   file2img(file).then((img) => console.log(img));
-   */
+/**
+ * ```
+  file2img(file).then((img) => console.log(img));
+  ```
+  */
+export function file2img(file: File) {
   return new Promise((resolve, reject) => {
     const img = new Image()
     const reader = new FileReader()

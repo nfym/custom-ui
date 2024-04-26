@@ -1,4 +1,5 @@
 import { isDataUrl } from '../is/bom'
+import { strToNum } from '../string'
 
 /**
  * Converts an image at `url` to base64-encoded data uri.
@@ -71,7 +72,7 @@ export function imageToDataUri(
   xhr.send()
 }
 
-export function dataUriToBlob(dataUrl: string) {
+export function dataUriToBlob(dataUrl: string): Blob {
   let uri = dataUrl.replace(/\s/g, '')
   uri = decodeURIComponent(uri)
 
@@ -98,7 +99,7 @@ export function dataUriToBlob(dataUrl: string) {
   return new Blob([ia], { type: mime })
 }
 
-export function downloadBlob(blob: Blob, fileName: string) {
+export function downloadBlob(blob: Blob, fileName: string): void {
   const msSaveBlob = (window.navigator as any).msSaveBlob
   if (msSaveBlob) {
     // requires IE 10+
@@ -127,17 +128,12 @@ export function downloadBlob(blob: Blob, fileName: string) {
   }
 }
 
-export function downloadDataUri(dataUrl: string, fileName: string) {
+export function downloadDataUri(dataUrl: string, fileName: string): void {
   const blob = dataUriToBlob(dataUrl)
   downloadBlob(blob, fileName)
 }
 
-export function strToNum(str: string) {
-  const ret = parseFloat(str)
-  return Number.isNaN(ret) ? null : ret
-}
-
-function parseViewBox(svg: string) {
+function parseViewBox(svg: string): string[] | null {
   const matches = svg.match(/<svg[^>]*viewBox\s*=\s*(["']?)(.+?)\1[^>]*>/i)
   if (matches && matches[2]) {
     return matches[2].replace(/\s+/, ' ').split(' ')
@@ -151,7 +147,7 @@ export function svgToDataUrl(
     width?: number | null
     height?: number | null
   } = {}
-) {
+): string {
   let viewBox: string[] | null = null
 
   const getNumberFromViewBox = (index: number) => {

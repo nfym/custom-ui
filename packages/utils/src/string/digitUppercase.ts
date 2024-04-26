@@ -1,6 +1,6 @@
 /**
  *
- * @desc 现金额转大写
+ *  现金额转大写
  */
 export default function digitUppercase(n: number) {
   const fraction = ['角', '分']

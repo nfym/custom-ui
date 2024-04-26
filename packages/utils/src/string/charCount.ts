@@ -4,6 +4,6 @@
  * @param char
  * @returns
  */
-const charCount = (str: string, char: string) => str.split(char).length - 1
-
-export default charCount
+export function charCount(str: string, char: string): number {
+  return str.split(char).length - 1
+}

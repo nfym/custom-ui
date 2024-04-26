@@ -1,5 +1,5 @@
-import useSwitchPage from './useSwitchPage'
-import useReload from './useReload'
-import usePrefix from './usePrefix'
+import useSwitchPage from './src/useSwitchPage'
+import useReload from './src/useReload'
+import usePrefix from './src/usePrefix'
 
 export { useSwitchPage, useReload, usePrefix }

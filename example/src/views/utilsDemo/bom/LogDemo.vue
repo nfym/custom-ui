@@ -1,5 +1,5 @@
 <template>
-  <comp-content-layout title="" :breadcrumb="breadcrumb">
+  <comp-content-layout title="log 信息打印相关方法" :breadcrumb="breadcrumb">
     <div :class="`${prefix.b()}`">
       <UiButton @click="showLogC">log 文本颜色</UiButton>
       <UiButton @click="showLogT">标签样式 log</UiButton>

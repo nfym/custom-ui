@@ -2,24 +2,20 @@ import { isString } from './string'
 import { isObjectLike } from './object'
 import { isArrayLike } from './array'
 /**
- *  两个数据是否相同
+ *  对比两个对象是否相同
  * @param {any} value
  * @param {any} other
  */
 export function isEqual(value: any, other: any): boolean {
-  if (value === other) {
-    return true
-  }
-  if (!value || !other) {
-    return false
-  }
-  if (isString(value) || isString(other)) {
-    return false
-  }
+  if (value === other) return true
+
+  if (!value || !other) return false
+
+  if (isString(value) || isString(other)) return false
+
   if (isArrayLike(value) || isArrayLike(other)) {
-    if (value.length !== other.length) {
-      return false
-    }
+    if (value.length !== other.length) return false
+
     let rst = true
     for (let i = 0; i < value.length; i++) {
       rst = isEqual(value[i], other[i])
@@ -29,12 +25,12 @@ export function isEqual(value: any, other: any): boolean {
     }
     return rst
   }
+
   if (isObjectLike(value) || isObjectLike(other)) {
     const valueKeys = Object.keys(value)
     const otherKeys = Object.keys(other)
-    if (valueKeys.length !== otherKeys.length) {
-      return false
-    }
+    if (valueKeys.length !== otherKeys.length) return false
+
     let rst = true
     for (let i = 0; i < valueKeys.length; i++) {
       rst = isEqual(value[valueKeys[i]], other[valueKeys[i]])
@@ -44,11 +40,12 @@ export function isEqual(value: any, other: any): boolean {
     }
     return rst
   }
+
   return false
 }
 
 /**
- *  两个数据是否相同,不依赖其他函数，来自https://www.30secondsofcode.org/js/s/equals/
+ *  对比两个对象是否相同,不依赖其他函数，来自https://www.30secondsofcode.org/js/s/equals/
  */
 export function equals(a: any, b: any): boolean {
   if (a === b) return true

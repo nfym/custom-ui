@@ -69,7 +69,10 @@ const utilsDemo = ref([
   {
     name: 'Bom',
     icon: 'icon/book.svg',
-    list: [{ routeName: 'Log', name: 'log' }]
+    list: [
+      { routeName: 'Log', name: 'log' },
+      { routeName: 'DataUri', name: 'datauri' }
+    ]
   },
   {
     name: '开发',
