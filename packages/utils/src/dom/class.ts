@@ -35,6 +35,9 @@ export function addClass(
   if (typeof selector === 'string' && elem.nodeType === 1) {
     const classes = selector.match(rnotwhite) || []
     const oldValue = fillSpaces(getClass(elem)).replace(rclass, ' ')
+
+    // [...classes] 将 RegExpMatchArray 转为 array
+    // 否则使用数组方法会报错 TS2349: This expression is not callable
     let newValue = [...classes].reduce((memo: string, cls: string) => {
       if (memo.indexOf(fillSpaces(cls)) < 0) {
         return `${memo}${cls} `

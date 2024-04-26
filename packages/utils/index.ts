@@ -15,11 +15,16 @@ export * as HighFn from './src/highFn'
 export * from './src/math'
 export * as Math from './src/math'
 
-// BOM 浏览器相关
+// BOM 浏览器相关 Start
 export { getSelection } from './src/bom/getSelection'
 
 export * from './src/bom/log'
 export * as Log from './src/bom/log'
+
+export * from './src/bom/datauri'
+export * as DataUri from './src/bom/log'
+
+// BOM 浏览器相关 End
 
 // Vue
 export { withInstall } from './src/vue/withInstall'

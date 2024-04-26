@@ -1,119 +1,116 @@
 <template>
   <main :class="prefix.b()">
-    <header :class="prefix.be('page-title')">工具方法</header>
+    <UiScrollbar view-style="padding:1rem">
+      <header :class="prefix.be('page-header')">
+        <div :class="prefix.be('page-title')">工具方法</div>
+        <div :class="prefix.be('page-desc')">常用工具方法整理</div>
+      </header>
 
-    <div :class="prefix.be('page-desc')">常用工具方法整理</div>
+      <section :class="prefix.be('page-body')">
+        <a-row :gutter="[24, 24]">
+          <a-col v-for="(item, index) in utilsDemo" :key="item.name" :span="8">
+            <div :class="prefix.be('card')">
+              <header
+                :class="[
+                  prefix.be('card-header'),
+                  {
+                    [prefix.bem('card-header', 'bg-light')]: index % 2 !== 0
+                  }
+                ]"
+              >
+                <div :class="prefix.be('card-header-title')">
+                  {{ item.name }}
+                </div>
+                <img
+                  :class="prefix.be('card-header-icon')"
+                  :src="getImageUrl(item.icon)"
+                />
+              </header>
 
-    <section>
-      <a-row :gutter="[40, 16]">
-        <a-col :span="8">
-          <div :class="prefix.be('card')">
-            <header :class="prefix.be('card-header')">
-              <div :class="prefix.be('card-header-title')">IS</div>
-              <img
-                :class="prefix.be('card-header-icon')"
-                :src="getImageUrl('icon/code.svg')"
-              />
-            </header>
-
-            <main :class="prefix.be('card-body')">
-              <UiScrollbar wrap-style="padding: 1rem">
-                <a-row :gutter="[0, 8]">
-                  <div :class="prefix.be('card-body-item')">数据库模式设计</div>
-                  <div :class="prefix.be('card-body-item')">数据导入</div>
-                  <div :class="prefix.be('card-body-item')">数据导出</div>
-                  <div :class="prefix.be('card-body-item')">数据库模式设计</div>
-                  <div :class="prefix.be('card-body-item')">数据导入</div>
-                  <div :class="prefix.be('card-body-item')">数据导出</div>
-                </a-row>
-              </UiScrollbar>
-            </main>
-          </div>
-        </a-col>
-
-        <a-col :span="8">
-          <div :class="prefix.be('card')">
-            <header
-              :class="[
-                prefix.be('card-header'),
-                prefix.bem('card-header', 'bg-light')
-              ]"
-            >
-              <div :class="prefix.be('card-header-title')">开发</div>
-              <img
-                :class="prefix.be('card-header-icon')"
-                :src="getImageUrl('icon/book.svg')"
-              />
-            </header>
-
-            <main :class="prefix.be('card-body')">
-              <UiScrollbar wrap-style="padding: 1rem">
-                <a-row :gutter="[0, 8]">
-                  <div :class="prefix.be('card-body-item')">数据库模式设计</div>
-                  <div :class="prefix.be('card-body-item')">数据导入</div>
-                  <div :class="prefix.be('card-body-item')">数据导出</div>
-                  <div :class="prefix.be('card-body-item')">数据库模式设计</div>
-                  <div :class="prefix.be('card-body-item')">数据导入</div>
-                  <div :class="prefix.be('card-body-item')">数据导出</div>
-                </a-row>
-              </UiScrollbar>
-            </main>
-          </div>
-        </a-col>
-
-        <a-col :span="8">
-          <div :class="prefix.be('card')">
-            <header :class="prefix.be('card-header')">
-              <div :class="prefix.be('card-header-title')">开发</div>
-              <img
-                :class="prefix.be('card-header-icon')"
-                :src="getImageUrl('icon/edit.svg')"
-              />
-            </header>
-
-            <main :class="prefix.be('card-body')">
-              <UiScrollbar wrap-style="padding: 1rem">
-                <a-row :gutter="[0, 8]">
-                  <div :class="prefix.be('card-body-item')">数据库模式设计</div>
-                  <div :class="prefix.be('card-body-item')">数据导入</div>
-                  <div :class="prefix.be('card-body-item')">数据导出</div>
-                  <div :class="prefix.be('card-body-item')">数据库模式设计</div>
-                  <div :class="prefix.be('card-body-item')">数据导入</div>
-                  <div :class="prefix.be('card-body-item')">数据导出</div>
-                </a-row>
-              </UiScrollbar>
-            </main>
-          </div>
-        </a-col>
-      </a-row>
-    </section>
+              <main :class="prefix.be('card-body')">
+                <UiScrollbar wrap-style="padding: 1rem">
+                  <a-row :gutter="[0, 8]">
+                    <div
+                      v-for="demo in item.list"
+                      :key="demo.routeName"
+                      :class="prefix.be('card-body-item')"
+                      @click="toDetail(demo.routeName)"
+                    >
+                      {{ demo.name }}
+                    </div>
+                  </a-row>
+                </UiScrollbar>
+              </main>
+            </div>
+          </a-col>
+        </a-row>
+      </section>
+    </UiScrollbar>
   </main>
 </template>
 
 <script setup lang="ts">
 defineOptions({ name: 'UtilsDemo' })
 
-import { usePrefix } from '@custom-ui/hooks'
+import { ref } from 'vue'
+import { usePrefix, useSwitchPage } from '@custom-ui/hooks'
 import { getImageUrl } from '@/utils/util'
 import { UiScrollbar } from '@custom-ui/components'
 
 const prefix = usePrefix('utils-bom')
+const switchPage = useSwitchPage()
+
+const utilsDemo = ref([
+  {
+    name: 'Is',
+    icon: 'icon/code.svg',
+    list: [{ routeName: 'Log', name: 'log' }]
+  },
+  {
+    name: 'Bom',
+    icon: 'icon/book.svg',
+    list: [{ routeName: 'Log', name: 'log' }]
+  },
+  {
+    name: '开发',
+    icon: 'icon/edit.svg',
+    list: [{ routeName: 'Log', name: 'log' }]
+  },
+  {
+    name: '开发',
+    icon: 'icon/edit.svg',
+    list: [{ routeName: 'Log', name: 'log' }]
+  }
+])
+
+function toDetail(routeName) {
+  switchPage(routeName)
+}
 </script>
 
 <style scoped lang="less">
 @prefix-cls: ~'utils-bom';
 
 .@{prefix-cls} {
-  &__page-title {
-    margin-bottom: 1.5rem;
-    color: #142140;
-    font-weight: 600;
-    font-size: 1.875rem;
-    letter-spacing: 0.05rem;
+  height: calc(100vh - 4rem - 3.5rem);
+  min-height: @pageContentMinHeight;
+
+  &__page-header {
+    .@{prefix-cls}__page-title {
+      margin-bottom: 0.5rem;
+      color: #142140;
+      font-weight: 600;
+      font-size: 1.25rem;
+      letter-spacing: 0.05rem;
+    }
+
+    .@{prefix-cls}__page-desc {
+      margin-bottom: 1rem;
+    }
   }
 
-  &__page-desc {
-    margin-bottom: 1.5rem;
+  &__page-body {
+    // padding: 1rem;
   }
 
   &__card {

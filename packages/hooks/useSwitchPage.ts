@@ -1,11 +1,11 @@
 /*
  * @Description: 路由切换方法封装
  * @Date: 2023-09-06 17:49:16
- * @LastEditTime: 2023-09-06 17:57:59
+ * @LastEditTime: 2024-04-25 18:22:06
  */
 import type { RouteLocationRaw, Router } from 'vue-router'
 import { useRouter } from 'vue-router'
-import { SwitchPage } from '@custom-ui/constants/page'
+import { SwitchPage } from '@custom-ui/constants'
 
 export default function useSwitchPage(router: Router = useRouter()) {
   const { push, replace, back } = router

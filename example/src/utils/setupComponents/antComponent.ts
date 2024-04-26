@@ -1,7 +1,7 @@
 /*
  * @Description: 全局注册 antd 组件
  * @Date: 2023-09-07 17:36:41
- * @LastEditTime: 2023-09-11 18:20:12
+ * @LastEditTime: 2024-04-26 09:15:04
  */
 import type { App } from 'vue'
 import {
@@ -12,7 +12,8 @@ import {
   Row,
   Col,
   Form,
-  Input
+  Input,
+  Breadcrumb
 } from 'ant-design-vue'
 
 export default function setupAntComponent(app: App) {
@@ -24,4 +25,5 @@ export default function setupAntComponent(app: App) {
   app.use(Space)
   app.use(Row)
   app.use(Col)
+  app.use(Breadcrumb)
 }

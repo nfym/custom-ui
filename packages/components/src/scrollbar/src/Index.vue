@@ -21,7 +21,7 @@
     </div>
     <template v-if="!native">
       <bar :move="moveX" :size="sizeWidth" />
-      <bar vertical :move="moveY" :size="sizeHeight" />
+      <bar vertical :move="moveY" :size="sizeHeight" :bar-style="barStyle" />
     </template>
   </div>
 </template>
@@ -42,7 +42,7 @@ import {
 } from 'vue'
 import { useRoute } from 'vue-router'
 import Bar from './bar'
-import { RESET_SCROLLBAR } from '@custom-ui/constants/provideKey'
+import { RESET_SCROLLBAR } from '@custom-ui/constants'
 
 export default defineComponent({
   name: 'UiScrollbar',
@@ -79,7 +79,9 @@ export default defineComponent({
     tag: {
       type: String,
       default: 'div'
-    }
+    },
+    // eslint-disable-next-line vue/require-default-prop
+    barStyle: String
   },
   emits: ['scroll', 'scrollToBottom'],
   setup(props, { emit }) {

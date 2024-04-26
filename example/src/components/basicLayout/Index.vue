@@ -1,7 +1,7 @@
 <!--
  * @Description: 系统基本布局
  * @Date: 2023-09-08 11:04:03
- * @LastEditTime: 2023-09-18 09:47:43
+ * @LastEditTime: 2024-04-26 09:13:13
 -->
 <template>
   <div :class="prefixCls">
@@ -35,9 +35,7 @@ const prefixCls = ref('basic-layout')
   display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow: auto;
-  background-color: @gray-1;
-  background-size: 100%;
+  background-color: @container-background;
 
   &__header {
     display: flex;
@@ -47,6 +45,7 @@ const prefixCls = ref('basic-layout')
     padding: 0 1rem;
     overflow: hidden;
     background-color: @gray-1;
+    border-bottom: 1px solid #eee;
   }
 }
 </style>

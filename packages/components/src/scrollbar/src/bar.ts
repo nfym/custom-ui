@@ -1,3 +1,4 @@
+/* eslint-disable vue/require-default-prop */
 import {
   defineComponent,
   h,
@@ -17,7 +18,8 @@ export default defineComponent({
   props: {
     vertical: Boolean,
     size: String,
-    move: Number
+    move: Number,
+    barStyle: String
   },
 
   setup(props) {
@@ -97,6 +99,7 @@ export default defineComponent({
       h(
         'div',
         {
+          style: props.barStyle,
           class: ['scrollbar__bar', 'is-' + bar.value.key],
           onMousedown: clickTrackHandler
         },

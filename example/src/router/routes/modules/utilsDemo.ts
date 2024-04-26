@@ -1,7 +1,7 @@
 /*
  * @Description: 随便加个模块验证 import.meta.glob() 自动导入模块路由配置
  * @Date: 2023-09-07 15:20:42
- * @LastEditTime: 2023-09-18 11:35:57
+ * @LastEditTime: 2024-04-25 15:15:21
  */
 import type { AppRouteRecordRaw } from '@/router/type'
 const utilsDemo: AppRouteRecordRaw = {
@@ -30,7 +30,8 @@ const utilsDemo: AppRouteRecordRaw = {
       name: 'Log',
       component: () => import('@/views/utilsDemo/bom/LogDemo.vue'),
       meta: {
-        isMenu: false
+        isMenu: false,
+        isFullContainer: true
       }
     }
   ]
