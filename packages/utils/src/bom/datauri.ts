@@ -141,7 +141,7 @@ function parseViewBox(svg: string): string[] | null {
   return null
 }
 
-export function svgToDataUrl(
+export function svgToDataUri(
   svg: string,
   options: {
     width?: number | null

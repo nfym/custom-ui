@@ -6,7 +6,7 @@
 export function throttle<T extends []>(
   fn: (...args: T) => void,
   delay = 60
-): (...args: any) => void {
+): (...args: T) => void {
   let flag = true
 
   return (...args: any) => {

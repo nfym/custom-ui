@@ -2,7 +2,9 @@
  *  是否 Array
  */
 export function isArray(value: any): value is Array<any> {
-  return value && Array.isArray(value)
+  if (Array.isArray) return Array.isArray(value)
+
+  return value instanceof Array
 }
 
 /**

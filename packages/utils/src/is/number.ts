@@ -14,7 +14,7 @@ export const isNumeric = (value: any): boolean =>
   !Array.isArray(value) && value - parseFloat(value) + 1 >= 0
 
 /**
- *  是否整数
+ * 是否整数
  */
 export const isInteger = Number.isInteger
   ? Number.isInteger
@@ -23,7 +23,11 @@ export const isInteger = Number.isInteger
     }
 
 /**
- *  是否小数
+ * 是否小数
+ * ```
+ * isDecimal(3) => false
+ * isDecimal(3.1) => true
+ * ```
  */
 export function isDecimal(num: unknown): boolean {
   return isNumber(num) && num % 1 !== 0
