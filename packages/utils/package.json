@@ -4,12 +4,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/customui-util.umd.cjs",
-  "module": "./dist/customui-util.js",
+  "main": "./index.ts",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
-      "import": "./dist/customui-util.js",
-      "require": "./dist/customui-util.umd.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
     }
   },
   "scripts": {
