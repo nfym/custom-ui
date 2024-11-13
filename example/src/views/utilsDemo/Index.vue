@@ -3,7 +3,7 @@
     <UiScrollbar view-style="padding:1rem">
       <header :class="prefix.be('page-header')">
         <div :class="prefix.be('page-title')">工具方法</div>
-        <div :class="prefix.be('page-desc')">常用工具方法整理</div>
+        <div :class="prefix.be('page-desc')">常用 JS 工具方法整理</div>
       </header>
 
       <section :class="prefix.be('page-body')">

@@ -2,7 +2,7 @@
   "compilerOptions": {
     /* 基本的语言和环境选项 */
     // ↓指定ECMAScript目标版本 "ES3"（默认）， "ES5"， "ES6"/ "ES2015"， "ES2016"， "ES2017"或 "ESNext" (最新版本)。
-    "target": "es2022",
+    "target": "ESNext",
     // ↓编译过程中需要引入的库文件的列表。
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     // ↓指定生成哪个模块系统代码： "None"， "CommonJS"， "AMD"， "System"， "UMD"， "ES6"或 "ES2015"。

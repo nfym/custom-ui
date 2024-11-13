@@ -9,13 +9,13 @@
         <a-col :span="6">
           <div :class="prefix.be('card')">
             <div :class="prefix.be('card-img-wrap')">
-              <img src="/public/logo.svg" />
+              <img src="/public/logo.svg" alt="CSS 原子类名" />
             </div>
 
             <div :class="prefix.be('card-sub')">
-              <div :class="prefix.be('card-title')">创意中心</div>
+              <div :class="prefix.be('card-title')">CSS 原子类名</div>
               <div :class="prefix.be('card-desc')">
-                全方位的营销创意平台，支持图文、视频再到落地页的素材及智能化创意
+                原子样式类名，常用基础 CSS 原子类名，持续更新
               </div>
               <div :class="prefix.be('card-link')">
                 <span :class="prefix.be('card-text')">立即查看</span>
@@ -38,7 +38,7 @@
             </div>
 
             <div :class="prefix.be('card-sub')">
-              <div :class="prefix.be('card-title')">创意中心</div>
+              <div :class="prefix.be('card-title')">CSS 样式组件</div>
               <div :class="prefix.be('card-desc')">
                 全方位的营销创意平台，支持图文、视频再到落地页的素材及智能化创意
               </div>
@@ -63,7 +63,7 @@
             </div>
 
             <div :class="prefix.be('card-sub')">
-              <div :class="prefix.be('card-title')">创意中心</div>
+              <div :class="prefix.be('card-title')">Vue 全局组件</div>
               <div :class="prefix.be('card-desc')">
                 全方位的营销创意平台，支持图文、视频再到落地页的素材及智能化创意
               </div>
