@@ -1,7 +1,6 @@
 <!--
  * @Description: 顶部导航
  * @Date: 2023-09-18 09:44:44
- * @LastEditTime: 2023-09-18 14:58:29
 -->
 <template>
   <section :class="prefixCls">

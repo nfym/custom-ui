@@ -3,12 +3,6 @@ import type { RouteRecordRaw } from 'vue-router'
 const RootRoute: RouteRecordRaw = {
   path: '/',
   name: 'Root',
-  redirect: '/home'
-}
-
-const HomeRoute: RouteRecordRaw = {
-  path: '/home',
-  name: 'Home',
   redirect: '/utilsDemo/index'
 }
 
@@ -27,8 +21,4 @@ const PAGE_NOT_FOUND_ROUTE: RouteRecordRaw = {
 }
 
 // 不要任何权限的基本路由
-export const basicRoutes: RouteRecordRaw[] = [
-  RootRoute,
-  HomeRoute,
-  PAGE_NOT_FOUND_ROUTE
-]
+export const basicRoutes: RouteRecordRaw[] = [RootRoute, PAGE_NOT_FOUND_ROUTE]
