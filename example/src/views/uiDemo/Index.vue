@@ -68,7 +68,12 @@
                 全方位的营销创意平台，支持图文、视频再到落地页的素材及智能化创意
               </div>
               <div :class="prefix.be('card-link')">
-                <span :class="prefix.be('card-text')">立即查看</span>
+                <span
+                  :class="prefix.be('card-text')"
+                  @click="toDetail('UiDemoVueComponents')"
+                >
+                  立即查看
+                </span>
                 <img
                   :class="prefix.be('card-icon')"
                   :src="getImageUrl('icon/arrow.svg')"
@@ -110,9 +115,14 @@
 <script setup lang="ts">
 defineOptions({ name: 'ComponentsDemo' })
 
-import { usePrefix } from '@custom-ui/hooks'
+import { usePrefix, useSwitchPage } from '@custom-ui/hooks'
 import { getImageUrl } from '@/utils/util'
 const prefix = usePrefix('components-demo')
+const switchPage = useSwitchPage()
+
+function toDetail(routeName: string) {
+  switchPage({ name: routeName })
+}
 </script>
 
 <style scoped lang="less">

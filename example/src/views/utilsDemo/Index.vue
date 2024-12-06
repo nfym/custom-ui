@@ -86,8 +86,8 @@ const utilsDemo = ref([
   }
 ])
 
-function toDetail(routeName) {
-  switchPage(routeName)
+function toDetail(routeName: string) {
+  switchPage({ name: routeName })
 }
 </script>
 

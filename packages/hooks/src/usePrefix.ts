@@ -1,7 +1,6 @@
 /*
  * @Description: classname 的 BEM 命名
  * @Date: 2023-09-21 14:15:27
- * @LastEditTime: 2023-09-21 15:35:12
  */
 import { computed, unref } from 'vue'
 // class 命名前缀 ，例如 element 使用 el, ant desing 使用 ant

@@ -20,7 +20,7 @@ import { UiRing } from '@custom-ui/components'
 const prefix = usePrefix('uiDemo-vue-demo')
 const breadcrumb = [
   {
-    goto: { name: 'ComponentsDemo' },
+    goto: { name: 'UiDemo' },
     label: '样式效果'
   },
   {
