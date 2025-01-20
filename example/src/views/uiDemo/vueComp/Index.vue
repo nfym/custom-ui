@@ -5,8 +5,10 @@
 <template>
   <comp-content-layout title="datauri 相关方法" :breadcrumb="breadcrumb">
     <div :class="`${prefix.b()}`">
-      <UiRing :segments="segments"></UiRing>
-      <UiRing :size="100" :stroke-width="20" :segments="segments"></UiRing>
+      <UIRing :segments="segments"></UIRing>
+      <UIRing :size="100" :stroke-width="20" :segments="segments"></UIRing>
+
+      <UILighCard></UILighCard>
     </div>
   </comp-content-layout>
 </template>
@@ -15,7 +17,7 @@
 defineOptions({ name: 'VueComponentsSDemo' })
 import { ref } from 'vue'
 import { usePrefix } from '@custom-ui/hooks'
-import { UiRing } from '@custom-ui/components'
+import { UIRing, UILighCard } from '@custom-ui/components'
 
 const prefix = usePrefix('uiDemo-vue-demo')
 const breadcrumb = [

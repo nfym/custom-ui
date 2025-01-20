@@ -5,6 +5,6 @@
 import Ring from './src/Index.vue'
 import { withInstall } from '@custom-ui/utils'
 
-const UiRing = withInstall(Ring)
+const UIRing = withInstall(Ring)
 
-export { UiRing }
+export { UIRing }
